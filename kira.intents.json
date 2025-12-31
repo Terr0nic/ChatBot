@@ -1,0 +1,1206 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "updated": "2025-12-31",
+    "engine": "rules+templates",
+    "notes": "Intents, Trigger, Rückfragen, Buttons. Antworten können Platzhalter {{link:id}} nutzen."
+  },
+  "topics": [
+    {
+      "id": "anmeldung",
+      "title": "Anmeldung",
+      "emoji": "📝",
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": "ablauf",
+      "title": "Ablauf",
+      "emoji": "🧭",
+      "visible": true,
+      "order": 2
+    },
+    {
+      "id": "theorie",
+      "title": "Theorie",
+      "emoji": "📘",
+      "visible": true,
+      "order": 3
+    },
+    {
+      "id": "pruefungen",
+      "title": "Prüfungen",
+      "emoji": "🧪",
+      "visible": true,
+      "order": 4
+    },
+    {
+      "id": "fahrstunden",
+      "title": "Fahrstunden",
+      "emoji": "🚗",
+      "visible": true,
+      "order": 5
+    },
+    {
+      "id": "termine",
+      "title": "Termine",
+      "emoji": "🗓️",
+      "visible": true,
+      "order": 6
+    },
+    {
+      "id": "seminare",
+      "title": "Seminare",
+      "emoji": "🎓",
+      "visible": true,
+      "order": 7
+    },
+    {
+      "id": "preise",
+      "title": "Preise & Zahlung",
+      "emoji": "💶",
+      "visible": true,
+      "order": 8
+    },
+    {
+      "id": "standorte",
+      "title": "Standorte",
+      "emoji": "📍",
+      "visible": true,
+      "order": 9
+    },
+    {
+      "id": "b196",
+      "title": "B196",
+      "emoji": "🏍️",
+      "visible": true,
+      "order": 10
+    },
+    {
+      "id": "bf17",
+      "title": "BF17",
+      "emoji": "🚸",
+      "visible": true,
+      "order": 11
+    },
+    {
+      "id": "umschreibung",
+      "title": "Umschreibung / Erweiterung",
+      "emoji": "🌍",
+      "visible": true,
+      "order": 12
+    },
+    {
+      "id": "kontakt",
+      "title": "Kontakt",
+      "emoji": "☎️",
+      "visible": true,
+      "order": 13
+    }
+  ],
+  "intents": [
+    {
+      "id": "standorte",
+      "topic": "standorte",
+      "triggers": [
+        "standort",
+        "standorte",
+        "filiale",
+        "filialen",
+        "adresse",
+        "wo seid ihr",
+        "wo finde ich euch",
+        "öffnungszeiten",
+        "erreichbarkeit"
+      ],
+      "entities": {
+        "branch": {
+          "type": "branch_id",
+          "source": "data.branches",
+          "match_on": [
+            "label",
+            "short_label",
+            "synonyms",
+            "city"
+          ]
+        }
+      },
+      "disambiguation": {
+        "when_missing": [
+          "branch"
+        ],
+        "ask": "Gern! Meinen Sie einen bestimmten Standort?",
+        "buttons": [
+          {
+            "type": "branch_pick",
+            "branch_id": "ma_innenstadt",
+            "label": "MA-Innenstadt (Hauptfiliale)"
+          },
+          {
+            "type": "branch_pick",
+            "branch_id": "ma_seckenheim",
+            "label": "MA-Seckenheim"
+          },
+          {
+            "type": "branch_pick",
+            "branch_id": "ma_hafen",
+            "label": "MA-Hafen"
+          },
+          {
+            "type": "branch_pick",
+            "branch_id": "lu_hemshof",
+            "label": "LU-Hemshof"
+          },
+          {
+            "type": "action",
+            "action": "list_all_branches",
+            "label": "Alle Standorte"
+          }
+        ]
+      },
+      "responses": {
+        "list_all_branches": {
+          "text": "Gerne – hier sind unsere Standorte. Wählen Sie einen Standort aus, dann zeige ich Ihnen Adresse, Telefon und Öffnungszeiten.",
+          "buttons": [
+            {
+              "type": "branch_pick",
+              "branch_id": "ma_innenstadt",
+              "label": "MA-Innenstadt (Hauptfiliale)"
+            },
+            {
+              "type": "branch_pick",
+              "branch_id": "ma_seckenheim",
+              "label": "MA-Seckenheim"
+            },
+            {
+              "type": "branch_pick",
+              "branch_id": "ma_hafen",
+              "label": "MA-Hafen"
+            },
+            {
+              "type": "branch_pick",
+              "branch_id": "lu_hemshof",
+              "label": "LU-Hemshof"
+            }
+          ]
+        },
+        "branch_details_template": {
+          "text": "{branch.label}\n{branch.address}\nTelefon: {branch.phone}\nFax: {branch.fax}\n\nBüro-Öffnungszeiten:\n{branch.office_hours_text}\n\nUnterricht:\n{branch.class_theory_text}",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            },
+            {
+              "type": "link",
+              "link_id": "termine",
+              "label": "Termine"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "anmeldung",
+      "topic": "anmeldung",
+      "triggers": [
+        "anmeldung",
+        "anmelden",
+        "start",
+        "beginnen",
+        "führerschein anfangen",
+        "wie melde ich mich an",
+        "wie gehts los",
+        "führerschein starten"
+      ],
+      "responses": {
+        "default": {
+          "text": "Sehr gerne. Die Anmeldung ist unkompliziert. Möchten Sie wissen, was Sie mitbringen müssen oder wo Sie sich anmelden können?",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "anmeldung_was_mitbringen",
+              "label": "Was mitbringen?"
+            },
+            {
+              "type": "action",
+              "action": "anmeldung_wo",
+              "label": "Wo anmelden?"
+            },
+            {
+              "type": "action",
+              "action": "anmeldung_danach",
+              "label": "Ablauf nach Anmeldung"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            }
+          ]
+        },
+        "anmeldung_was_mitbringen": {
+          "text": "Zur Anmeldung benötigen Sie: Personalausweis. Falls schon vorhanden: Sehtest, Erste-Hilfe-Nachweis und Passbild – diese können in der Regel auch nachgereicht werden.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "ablauf_ueberblick",
+              "label": "Ablauf kurz erklärt"
+            },
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Standorte"
+            }
+          ]
+        },
+        "anmeldung_wo": {
+          "text": "Sie können sich in jeder unserer Filialen während der Öffnungszeiten anmelden – auch ohne Termin.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Standorte"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            }
+          ]
+        },
+        "anmeldung_danach": {
+          "text": "Nach der Anmeldung starten Sie mit dem Theorieunterricht und parallel läuft der Antrag bei der Behörde. Sobald die Theorieprüfung bestanden ist, beginnen die Fahrstunden bis zur praktischen Prüfung.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "theorie",
+              "label": "Theorie"
+            },
+            {
+              "type": "action",
+              "action": "termine",
+              "label": "Termine"
+            },
+            {
+              "type": "action",
+              "action": "ablauf_ueberblick",
+              "label": "Überblick"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ablauf",
+      "topic": "ablauf",
+      "triggers": [
+        "ablauf",
+        "wie läuft das",
+        "wie geht das",
+        "von anmeldung bis führerschein",
+        "führerschein ablauf",
+        "was passiert dann"
+      ],
+      "responses": {
+        "default": {
+          "text": "Gerne erkläre ich Ihnen den Ablauf. An welchem Punkt stehen Sie gerade?",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "ablauf_anfang",
+              "label": "Ganz am Anfang"
+            },
+            {
+              "type": "action",
+              "action": "ablauf_anmeldung_laeuft",
+              "label": "Anmeldung läuft schon"
+            },
+            {
+              "type": "action",
+              "action": "ablauf_theorie_fast",
+              "label": "Theorie fast fertig"
+            },
+            {
+              "type": "action",
+              "action": "ablauf_kurz_vor",
+              "label": "Kurz vor der Prüfung"
+            },
+            {
+              "type": "action",
+              "action": "ablauf_ueberblick",
+              "label": "Einfach Überblick"
+            }
+          ]
+        },
+        "ablauf_anfang": {
+          "text": "Alles beginnt mit der Anmeldung. Danach starten Sie mit dem Theorieunterricht und parallel läuft Ihr Antrag bei der Behörde. Sobald die Theorieprüfung bestanden ist, beginnen die Fahrstunden bis zur praktischen Prüfung.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "anmeldung",
+              "label": "Anmeldung"
+            },
+            {
+              "type": "action",
+              "action": "theorie",
+              "label": "Theorie"
+            },
+            {
+              "type": "action",
+              "action": "pruefungen",
+              "label": "Prüfungen"
+            }
+          ]
+        },
+        "ablauf_anmeldung_laeuft": {
+          "text": "Super – dann sind Sie schon auf dem richtigen Weg. Während Ihr Antrag bearbeitet wird, können Sie bereits Theorieunterricht besuchen. Danach folgt die Theorieprüfung und anschließend die Fahrpraxis bis zur praktischen Prüfung.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "theorie",
+              "label": "Theorie"
+            },
+            {
+              "type": "action",
+              "action": "pruefungen",
+              "label": "Prüfungen"
+            },
+            {
+              "type": "action",
+              "action": "fahrstunden",
+              "label": "Fahrstunden"
+            }
+          ]
+        },
+        "ablauf_theorie_fast": {
+          "text": "Perfekt. Sobald Sie die Theorieprüfung bestanden haben, starten wir mit den Fahrstunden. Wenn alles sitzt, melden wir Sie zur praktischen Prüfung an.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "fahrstunden",
+              "label": "Fahrstunden"
+            },
+            {
+              "type": "action",
+              "action": "pruefungen",
+              "label": "Prüfungen"
+            }
+          ]
+        },
+        "ablauf_kurz_vor": {
+          "text": "Dann fehlt nicht mehr viel. Wir bereiten Sie gezielt vor und planen mit Ihnen die praktische Prüfung. Nach bestandener Prüfung halten Sie Ihren Führerschein in den Händen.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "pruefungen",
+              "label": "Prüfungen"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            }
+          ]
+        },
+        "ablauf_ueberblick": {
+          "text": "Der Weg zum Führerschein: Anmeldung → Theorieunterricht → Theorieprüfung → Fahrstunden → Praktische Prüfung → Führerschein.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "anmeldung",
+              "label": "Anmeldung"
+            },
+            {
+              "type": "action",
+              "action": "termine",
+              "label": "Termine"
+            },
+            {
+              "type": "action",
+              "action": "theorie",
+              "label": "Theorie"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "termine",
+      "topic": "termine",
+      "triggers": [
+        "termin",
+        "termine",
+        "wann",
+        "kurs",
+        "beginn",
+        "start",
+        "theoriezeiten",
+        "asf termin",
+        "fes termin",
+        "bkf termin",
+        "prüfungstermin"
+      ],
+      "responses": {
+        "default": {
+          "text": "Gerne. Um welche Art von Termin geht es denn?",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "termine_theorie",
+              "label": "Theorieunterricht"
+            },
+            {
+              "type": "action",
+              "action": "termine_asf_fes",
+              "label": "ASF / FES"
+            },
+            {
+              "type": "action",
+              "action": "termine_bkf",
+              "label": "BKF / LKW / BUS"
+            },
+            {
+              "type": "action",
+              "action": "termine_pruefung",
+              "label": "Prüfung"
+            }
+          ]
+        },
+        "termine_theorie": {
+          "text": "Die aktuellen Theorie-Termine finden Sie auf unserer Terminseite. Wenn Sie möchten, kann ich auch nach einem bestimmten Standort schauen.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "termine",
+              "label": "Termine"
+            },
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Standort wählen"
+            }
+          ]
+        },
+        "termine_asf_fes": {
+          "text": "Die nächsten ASF- und FES-Termine finden Sie ebenfalls auf unserer Terminseite. Wenn Sie möchten, kann ich Ihnen den passenden Standort raussuchen.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "termine",
+              "label": "Termine"
+            },
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Standort wählen"
+            }
+          ]
+        },
+        "termine_bkf": {
+          "text": "Für BKF-, LKW- und BUS-Kurse haben wir eine eigene Infoseite mit Terminen und Details.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "bkf_lkw_bus",
+              "label": "BKF / LKW / BUS"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            }
+          ]
+        },
+        "termine_pruefung": {
+          "text": "Prüfungstermine werden individuell geplant und direkt mit dem TÜV abgestimmt. Am besten melden Sie sich dazu kurz bei Ihrer Filiale – wir kümmern uns darum.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Standort wählen"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "theorie",
+      "topic": "theorie",
+      "triggers": [
+        "theorie",
+        "theorieunterricht",
+        "theoriezeiten",
+        "wann theorie",
+        "theoriestunden",
+        "unterricht"
+      ],
+      "responses": {
+        "default": {
+          "text": "Gerne. Was möchten Sie genau zum Theorieunterricht wissen?",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "theorie_zeiten",
+              "label": "Zeiten & Termine"
+            },
+            {
+              "type": "action",
+              "action": "theorie_ablauf",
+              "label": "Ablauf"
+            },
+            {
+              "type": "action",
+              "action": "theorie_voraussetzungen",
+              "label": "Voraussetzungen"
+            },
+            {
+              "type": "action",
+              "action": "pruefungen",
+              "label": "Prüfungen"
+            }
+          ]
+        },
+        "theorie_zeiten": {
+          "text": "Die aktuellen Theoriezeiten und Starttermine finden Sie auf unserer Terminseite. Wenn Sie möchten, können Sie auch einen Standort auswählen – dann zeige ich Ihnen die festen Unterrichtszeiten.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "termine",
+              "label": "Termine"
+            },
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Standort wählen"
+            }
+          ]
+        },
+        "theorie_ablauf": {
+          "text": "Der Theorieunterricht besteht aus mehreren Unterrichtseinheiten. Sie können in der Regel jederzeit einsteigen und die Stunden flexibel kombinieren. Parallel sollte der Antrag bei der Behörde frühzeitig gestellt werden, damit Sie rechtzeitig zur Theorieprüfung zugelassen werden.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "ablauf_ueberblick",
+              "label": "Ablauf kurz"
+            },
+            {
+              "type": "action",
+              "action": "anmeldung",
+              "label": "Anmeldung"
+            }
+          ]
+        },
+        "theorie_voraussetzungen": {
+          "text": "Für den Start des Theorieunterrichts brauchen Sie meist noch keine abgeschlossene Anmeldung bei der Behörde. Wichtig ist nur, dass der Antrag frühzeitig gestellt wird, damit Sie später zur Prüfung zugelassen werden.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "anmeldung",
+              "label": "Anmeldung"
+            },
+            {
+              "type": "action",
+              "action": "ablauf_ueberblick",
+              "label": "Ablauf"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "pruefungen",
+      "topic": "pruefungen",
+      "triggers": [
+        "prüfung",
+        "prüfungen",
+        "theorieprüfung",
+        "praktische prüfung",
+        "fahrprüfung",
+        "durchgefallen",
+        "nicht bestanden",
+        "prüfungsort",
+        "wo ist meine prüfung"
+      ],
+      "entities": {
+        "city": {
+          "type": "enum",
+          "values": [
+            "Mannheim",
+            "Ludwigshafen"
+          ],
+          "match_on": [
+            "mannheim",
+            "ludwigshafen",
+            "lu"
+          ]
+        },
+        "exam_location": {
+          "type": "exam_location_id",
+          "source": "data.exam_locations",
+          "match_on": [
+            "label",
+            "synonyms",
+            "city"
+          ]
+        }
+      },
+      "responses": {
+        "default": {
+          "text": "Gerne. Um welche Prüfung geht es bei Ihnen?",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "pruefung_theorie",
+              "label": "Theorieprüfung"
+            },
+            {
+              "type": "action",
+              "action": "pruefung_praxis",
+              "label": "Praktische Prüfung"
+            },
+            {
+              "type": "action",
+              "action": "pruefung_nicht_bestanden",
+              "label": "Nicht bestanden"
+            },
+            {
+              "type": "action",
+              "action": "pruefung_termin",
+              "label": "Prüfungstermin"
+            },
+            {
+              "type": "action",
+              "action": "pruefung_ort_start",
+              "label": "Prüfungsort"
+            }
+          ]
+        },
+        "pruefung_theorie": {
+          "text": "Die Theorieprüfung legen Sie beim TÜV ab. Sobald Sie vorbereitet sind, melden wir Sie zur Prüfung an.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "theorie",
+              "label": "Theorie"
+            },
+            {
+              "type": "action",
+              "action": "termine",
+              "label": "Termine"
+            }
+          ]
+        },
+        "pruefung_praxis": {
+          "text": "Die praktische Prüfung findet beim TÜV statt. Wir bereiten Sie gezielt vor und melden Sie an, sobald Sie sicher prüfungsreif sind.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "fahrstunden",
+              "label": "Fahrstunden"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            }
+          ]
+        },
+        "pruefung_nicht_bestanden": {
+          "text": "Das ist kein Problem – das passiert vielen. Wir besprechen gemeinsam, was gefehlt hat, üben gezielt nach und melden Sie zur nächsten Prüfung an.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "fahrstunden",
+              "label": "Weiter üben"
+            },
+            {
+              "type": "action",
+              "action": "pruefung_termin",
+              "label": "Neuer Termin"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Beratung"
+            }
+          ]
+        },
+        "pruefung_termin": {
+          "text": "Prüfungstermine werden individuell geplant und direkt mit dem TÜV abgestimmt. Die genaue Uhrzeit erfahren Sie bei uns im Büro oder im Cockpit-Portal.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            },
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Standorte"
+            }
+          ]
+        },
+        "pruefung_ort_start": {
+          "text": "Gerne. Findet Ihre Prüfung in Mannheim oder in Ludwigshafen statt?",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "pruefung_ort_ma",
+              "label": "Mannheim"
+            },
+            {
+              "type": "action",
+              "action": "pruefung_ort_lu",
+              "label": "Ludwigshafen"
+            }
+          ]
+        },
+        "pruefung_ort_ma": {
+          "text": "Prüfungsort Mannheim:\nTÜV Mannheim\nDudenstraße 23\n68167 Mannheim\n\nWelcher Prüfungsort für Sie gilt, hängt vom Prüfauftrag ab. Die genaue Uhrzeit erfahren Sie bei uns im Büro oder im Cockpit-Portal.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            },
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Büro-Standorte"
+            }
+          ]
+        },
+        "pruefung_ort_lu": {
+          "text": "Prüfungsort Ludwigshafen:\nTÜV Ludwigshafen\nAchtmorgenstraße 5\n67065 Ludwigshafen am Rhein\n\nWelcher Prüfungsort für Sie gilt, hängt vom Prüfauftrag ab. Die genaue Uhrzeit erfahren Sie bei uns im Büro oder im Cockpit-Portal.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            },
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Büro-Standorte"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "fahrstunden",
+      "topic": "fahrstunden",
+      "triggers": [
+        "fahrstunden",
+        "fahrstunde",
+        "praxis",
+        "übungsstunde",
+        "sonderfahrten",
+        "autobahn",
+        "überland",
+        "nachtfahrt",
+        "treffpunkt",
+        "automatik",
+        "schalter",
+        "b197"
+      ],
+      "responses": {
+        "default": {
+          "text": "Gerne. Um welche Führerscheinklasse geht es bei Ihnen?",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "fahrstunden_b",
+              "label": "Klasse B (Auto)"
+            },
+            {
+              "type": "action",
+              "action": "fahrstunden_moto",
+              "label": "Motorrad (A/A1/A2)"
+            },
+            {
+              "type": "action",
+              "action": "fahrstunden_lkw",
+              "label": "LKW (C/CE)"
+            },
+            {
+              "type": "action",
+              "action": "fahrstunden_auto_schalt_b197",
+              "label": "Automatik / Schalter / B197"
+            }
+          ]
+        },
+        "fahrstunden_b": {
+          "text": "Die Fahrstunden starten Schritt für Schritt – oft parallel zur Theorie. Wir üben Grundlagen, Stadtverkehr und später auch Landstraße/Autobahn. Wie viele Übungsstunden Sie benötigen, ist individuell – wir planen das realistisch und transparent.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "sonderfahrten",
+              "label": "Sonderfahrten"
+            },
+            {
+              "type": "action",
+              "action": "dauer_fahrstunde",
+              "label": "Dauer einer Fahrstunde"
+            },
+            {
+              "type": "action",
+              "action": "anzahl_fahrstunden",
+              "label": "Wie viele Fahrstunden?"
+            }
+          ]
+        },
+        "fahrstunden_moto": {
+          "text": "Auch bei Motorrad-Ausbildungen planen wir die Praxis Schritt für Schritt. Details hängen von der Klasse (A/A1/A2/Aufstieg) ab – am besten sagen Sie mir kurz, welche Klasse Sie machen möchten.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Beratung"
+            },
+            {
+              "type": "action",
+              "action": "termine",
+              "label": "Termine"
+            }
+          ]
+        },
+        "fahrstunden_lkw": {
+          "text": "Bei LKW-Ausbildungen hängt die Planung stark von Klasse und Vorwissen ab. Am besten melden Sie sich kurz bei uns – dann planen wir die Fahrpraxis passend für Sie.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            },
+            {
+              "type": "link",
+              "link_id": "bkf_lkw_bus",
+              "label": "BKF / LKW / BUS"
+            }
+          ]
+        },
+        "sonderfahrten": {
+          "text": "Zu den Pflichtfahrten (Sonderfahrten) gehören Fahrten außerhalb der Stadt, Autobahnfahrten und Nachtfahrten. Die genaue Anzahl ist gesetzlich vorgegeben und hängt von Ihrer Klasse ab.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "fahrstunden_b",
+              "label": "Zur Klasse B"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Nachfragen"
+            }
+          ]
+        },
+        "dauer_fahrstunde": {
+          "text": "Eine Fahrstunde dauert in der Regel 45 Minuten. Häufig planen wir Doppelstunden, damit sich das Fahren richtig lohnt.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "fahrstunden_b",
+              "label": "Mehr zu Fahrstunden"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            }
+          ]
+        },
+        "anzahl_fahrstunden": {
+          "text": "Das ist sehr individuell und hängt z. B. von Vorerfahrung, Übungsfrequenz und Sicherheit im Verkehr ab. Wir sagen Ihnen nach den ersten Stunden ehrlich, wo Sie stehen, und planen dann gemeinsam.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "preise",
+              "label": "Kosten / Zahlung"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Beratung"
+            }
+          ]
+        },
+        "fahrstunden_auto_schalt_b197": {
+          "text": "Ja, bei uns können Sie sowohl auf Automatik als auch auf Schaltwagen ausgebildet werden. Zusätzlich bieten wir auch die B197-Ausbildung an – damit fahren Sie die Prüfung auf Automatik, dürfen später aber auch Schaltwagen fahren.\n\nGerne erklären wir Ihnen die Unterschiede und helfen Ihnen bei der Entscheidung.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Beratung"
+            },
+            {
+              "type": "action",
+              "action": "ablauf_ueberblick",
+              "label": "Ablauf"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "preise",
+      "topic": "preise",
+      "triggers": [
+        "preis",
+        "preise",
+        "kosten",
+        "was kostet",
+        "wie teuer",
+        "zahlen",
+        "zahlung",
+        "bezahlen",
+        "ratenzahlung",
+        "monatlich"
+      ],
+      "responses": {
+        "default": {
+          "text": "Die Kosten hängen stark von Führerscheinklasse und individuellem Lernverlauf ab. Für eine erste realistische Einschätzung können Sie unseren Kostenrechner nutzen: {{link:kostenrechner}}",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kostenrechner",
+              "label": "Kostenrechner"
+            },
+            {
+              "type": "action",
+              "action": "zahlung",
+              "label": "Wie wird bezahlt?"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Beratung"
+            }
+          ]
+        },
+        "zahlung": {
+          "text": "Bei uns läuft die Bezahlung Schritt für Schritt parallel zur Ausbildung. Sie zahlen immer dann, wenn Leistungen anfallen – z. B. für Anmeldung, Unterricht, Fahrstunden oder Prüfungen. Eine klassische Ratenzahlung im Sinne von „erst alles machen und später in festen Monatsraten zahlen“ bieten wir nicht an. So behalten Sie jederzeit die volle Kostenkontrolle.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "anmeldung",
+              "label": "Anmeldung"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "seminare",
+      "topic": "seminare",
+      "triggers": [
+        "seminar",
+        "seminare",
+        "asf",
+        "fes",
+        "bkf",
+        "weiterbildung",
+        "punkteabbau",
+        "probezeit seminar"
+      ],
+      "responses": {
+        "default": {
+          "text": "Unter Seminare fallen Schulungen rund um Probezeit (ASF), Punkte (FES) sowie BKF / Weiterbildungen. Worum geht es bei Ihnen?",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "seminare_asf",
+              "label": "ASF"
+            },
+            {
+              "type": "action",
+              "action": "seminare_fes",
+              "label": "FES"
+            },
+            {
+              "type": "action",
+              "action": "seminare_bkf",
+              "label": "BKF / LKW / BUS"
+            },
+            {
+              "type": "action",
+              "action": "termine",
+              "label": "Termine"
+            }
+          ]
+        },
+        "seminare_asf": {
+          "text": "ASF ist ein Pflichtseminar in der Probezeit nach bestimmten Verstößen. Es besteht aus mehreren Sitzungen und ist verpflichtend. Wenn Sie möchten, schicke ich Ihnen die passenden Termine.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "termine",
+              "label": "Termine"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            }
+          ]
+        },
+        "seminare_fes": {
+          "text": "FES ist ein Fahreignungsseminar. Damit können Sie Punkte abbauen – je nach Punktestand und Voraussetzungen. Wenn Sie möchten, erklären wir Ihnen kurz, was in Ihrem Fall möglich ist.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Beratung"
+            },
+            {
+              "type": "link",
+              "link_id": "termine",
+              "label": "Termine"
+            }
+          ]
+        },
+        "seminare_bkf": {
+          "text": "Für BKF-, LKW- und BUS-Themen finden Sie Infos und Termine auf unserer BKF-Seite.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "bkf_lkw_bus",
+              "label": "BKF / LKW / BUS"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "b196",
+      "topic": "b196",
+      "triggers": [
+        "b196",
+        "125er",
+        "125 ccm",
+        "125ccm",
+        "motorrad mit auto"
+      ],
+      "responses": {
+        "default": {
+          "text": "Mit der Schlüsselzahl B196 dürfen Sie 125-ccm-Motorräder fahren, ohne eine zusätzliche Prüfung abzulegen – vorausgesetzt, Sie erfüllen die Voraussetzungen. Am besten klären wir kurz, ob das bei Ihnen passt.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Beratung"
+            },
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Standorte"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bf17",
+      "topic": "bf17",
+      "triggers": [
+        "bf17",
+        "führerschein mit 17",
+        "begleitetes fahren",
+        "begleitet fahren"
+      ],
+      "responses": {
+        "default": {
+          "text": "Mit BF17 können Sie den Führerschein bereits mit 17 machen und bis zum 18. Geburtstag nur in Begleitung einer eingetragenen Begleitperson fahren. Die Ausbildung und Prüfungen sind wie bei Klasse B.",
+          "buttons": [
+            {
+              "type": "action",
+              "action": "anmeldung",
+              "label": "Anmeldung"
+            },
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Beratung"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "umschreibung",
+      "topic": "umschreibung",
+      "triggers": [
+        "umschreibung",
+        "ausländischer führerschein",
+        "erweiterung",
+        "klasse be",
+        "aufstieg",
+        "umtragen"
+      ],
+      "responses": {
+        "default": {
+          "text": "Wenn Sie Ihren Führerschein umschreiben oder eine weitere Klasse erwerben möchten, beraten wir Sie am besten kurz persönlich, da die Voraussetzungen je nach Ausgangsführerschein unterschiedlich sind.",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Beratung"
+            },
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Standorte"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "kontakt",
+      "topic": "kontakt",
+      "triggers": [
+        "kontakt",
+        "telefon",
+        "nummer",
+        "anrufen",
+        "email",
+        "mail",
+        "whatsapp"
+      ],
+      "responses": {
+        "default": {
+          "text": "Gerne. Am schnellsten erreichen Sie uns über unsere Kontaktseite: {{link:kontakt}}",
+          "buttons": [
+            {
+              "type": "link",
+              "link_id": "kontakt",
+              "label": "Kontakt"
+            },
+            {
+              "type": "action",
+              "action": "standorte",
+              "label": "Standorte"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
