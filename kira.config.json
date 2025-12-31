@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "brand": "Fahrschule Rakowski",
+    "version": "1.0.0",
+    "updated": "2025-12-31",
+    "notes": "Konfiguration für Kira (Browser-only). Alles im Dashboard editierbar."
+  },
+  "voice": {
+    "language": "de-DE",
+    "addressing": "sie",
+    "tone": "nett_professionell",
+    "max_sentences": 5,
+    "use_emojis": "sparsam",
+    "bullets_preferred": true
+  },
+  "ui": {
+    "start_tiles": [
+      {
+        "id": "anmeldung",
+        "label": "Anmeldung",
+        "emoji": "📝"
+      },
+      {
+        "id": "termine",
+        "label": "Termine",
+        "emoji": "🗓️"
+      },
+      {
+        "id": "seminare",
+        "label": "Seminare",
+        "emoji": "🎓"
+      }
+    ],
+    "show_suggested_chips": "fallback_or_unclear"
+  },
+  "holiday_mode": {
+    "enabled": false,
+    "from": "",
+    "to": "",
+    "back": "",
+    "message": "⚠️ Hinweis: Unser Büro ist vom {from} bis {to} im Urlaub. Ab {back} sind wir wieder wie gewohnt erreichbar.",
+    "apply_to_intents": [
+      "anmeldung",
+      "termine",
+      "pruefungen",
+      "fahrstunden",
+      "theorie",
+      "preise",
+      "standorte",
+      "seminare",
+      "umschreibung"
+    ]
+  },
+  "fallback": {
+    "text": "Meine Spürnase hat dazu gerade nichts Passendes gefunden. Schauen Sie bitte in unsere Infos – oder melden Sie sich kurz bei uns.",
+    "primary_link_id": "faq",
+    "secondary_link_id": "kontakt",
+    "show_buttons": true
+  }
+}
