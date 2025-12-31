@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "updated": "2025-12-31",
+    "notes": "Stammdaten (Standorte, Prüfungsorte, Links)."
+  },
+  "links": {
+    "kostenrechner": {
+      "label": "Kostenrechner",
+      "url": "https://www.fahrschule-rakowski.eu/faq/f%C3%BChrerscheinklassen/kostenrechner/"
+    },
+    "termine": {
+      "label": "Termine",
+      "url": "https://www.fahrschule-rakowski.eu/termine/"
+    },
+    "bkf_lkw_bus": {
+      "label": "BKF / LKW / BUS",
+      "url": "https://www.fahrschule-rakowski.eu/bkf-lkw-bus/"
+    },
+    "faq": {
+      "label": "FAQ",
+      "url": "https://www.fahrschule-rakowski.eu/faq-1/"
+    },
+    "kontakt": {
+      "label": "Kontakt",
+      "url": "https://www.fahrschule-rakowski.eu/kontakt/"
+    }
+  },
+  "branches": [
+    {
+      "id": "ma_innenstadt",
+      "label": "MA-Innenstadt (Hauptfiliale)",
+      "short_label": "MA-Innenstadt",
+      "city": "Mannheim",
+      "address": "I7, 29\n68159 Mannheim",
+      "phone": "0621 - 27220",
+      "fax": "0621-1221413",
+      "tags": [
+        "hauptfiliale"
+      ],
+      "synonyms": [
+        "innenstadt",
+        "hauptfiliale",
+        "zentrum",
+        "city",
+        "ma innenstadt",
+        "mannheim innenstadt"
+      ],
+      "office_hours": [
+        {
+          "days": [
+            "Mo",
+            "Di",
+            "Mi",
+            "Do"
+          ],
+          "from": "10:00",
+          "to": "17:00"
+        },
+        {
+          "days": [
+            "Fr"
+          ],
+          "from": "10:00",
+          "to": "15:00"
+        }
+      ],
+      "class_theory": [
+        {
+          "days": [
+            "Mo",
+            "Mi"
+          ],
+          "from": "18:00",
+          "to": "19:30",
+          "note": "Unterricht für alle Klassen"
+        }
+      ]
+    },
+    {
+      "id": "ma_seckenheim",
+      "label": "MA-Seckenheim",
+      "short_label": "MA-Seckenheim",
+      "city": "Mannheim",
+      "address": "Säckingerstr. 1\n68239 Seckenheim",
+      "phone": "0621- 4810226",
+      "fax": "0621-1221413",
+      "synonyms": [
+        "seckenheim",
+        "ma seckenheim",
+        "mannheim seckenheim"
+      ],
+      "office_hours": [
+        {
+          "days": [
+            "Di",
+            "Do"
+          ],
+          "from": "16:30",
+          "to": "18:00"
+        }
+      ],
+      "class_theory": [
+        {
+          "days": [
+            "Di",
+            "Do"
+          ],
+          "from": "18:00",
+          "to": "19:30",
+          "note": "Unterricht für alle Klassen"
+        }
+      ]
+    },
+    {
+      "id": "ma_hafen",
+      "label": "MA-Hafen",
+      "short_label": "MA-Hafen",
+      "city": "Mannheim",
+      "address": "Fruchtbahnhofstr. 15, 2 OG\n68159 Mannheim",
+      "phone": "0621 - 27220",
+      "fax": "0621-1221413",
+      "synonyms": [
+        "hafen",
+        "ma hafen",
+        "mannheim hafen"
+      ],
+      "office_hours": [],
+      "training_location": {
+        "notes": [
+          "Schulungsort: ASF/FES/BKF"
+        ]
+      },
+      "class_theory": [
+        {
+          "days": [
+            "Mi"
+          ],
+          "from": "17:00",
+          "to": "20:00",
+          "note": "Unterricht für Lkw-Fahrer"
+        },
+        {
+          "days": [],
+          "from": "",
+          "to": "",
+          "note": "Unterricht für Bus-Fahrer: nach Vereinbarung"
+        }
+      ]
+    },
+    {
+      "id": "lu_hemshof",
+      "label": "LU-Hemshof",
+      "short_label": "LU-Hemshof",
+      "city": "Ludwigshafen",
+      "address": "Falkenstraße 9\n67063 Ludwigshafen",
+      "phone": "0621- 517080",
+      "fax": "0621-1221413",
+      "synonyms": [
+        "hemshof",
+        "lu hemshof",
+        "ludwigshafen hemshof",
+        "ludwigshafen"
+      ],
+      "office_hours": [
+        {
+          "days": [
+            "Di"
+          ],
+          "from": "16:30",
+          "to": "18:00"
+        }
+      ],
+      "class_theory": [
+        {
+          "days": [
+            "Di"
+          ],
+          "from": "18:00",
+          "to": "19:30",
+          "note": "Unterricht für alle Klassen"
+        }
+      ]
+    }
+  ],
+  "exam_locations": [
+    {
+      "id": "tuev_mannheim",
+      "city": "Mannheim",
+      "label": "TÜV Mannheim",
+      "address": "Dudenstraße 23\n68167 Mannheim",
+      "synonyms": [
+        "prüfungsort mannheim",
+        "tüv mannheim",
+        "mannheim tüv",
+        "dudenstraße"
+      ]
+    },
+    {
+      "id": "tuev_ludwigshafen",
+      "city": "Ludwigshafen",
+      "label": "TÜV Ludwigshafen",
+      "address": "Achtmorgenstraße 5\n67065 Ludwigshafen am Rhein",
+      "synonyms": [
+        "prüfungsort ludwigshafen",
+        "tüv ludwigshafen",
+        "ludwigshafen tüv",
+        "achtmorgenstraße"
+      ]
+    }
+  ]
+}
