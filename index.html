@@ -980,19 +980,68 @@
             addMsg(`${esc(text).replaceAll("\n","<br>")}${renderDashButtons(res.buttons)}`, "kira");
             bindDashButtons();
           } else {
-            const fb = CFG?.fallback || {};
-            const fbText = String(fb.text || "").trim() || `${pick(microAcks)} Ich hab dazu gerade nichts Passendes im Wissen gefunden.`;
+  // Fuzzy-Fallback: Wenn trigger-String-Matching nix findet, versuch es über die
+  // KB-Scoring-Logik (die wir aus intents gebaut haben). Das macht Kira deutlich "klüger".
+  let best = null, bestS = 0;
+  for(const e of KB){
+    const s = scoreEntry(e, t);
+    if(s > bestS){ bestS = s; best = e; }
+  }
+  const hit = (bestS >= 8) ? best : null;
 
-            let linksHtml = "";
-            const p = fb.primary_link_id;
-            const s = fb.secondary_link_id;
-            const btns = [];
-            if(p && DATA?.links?.[p]?.url) btns.push({label: DATA.links[p].label || p, url: DATA.links[p].url});
-            if(s && DATA?.links?.[s]?.url) btns.push({label: DATA.links[s].label || s, url: DATA.links[s].url});
-            linksHtml = renderDashButtons(btns);
+  if(hit && hit.intent){
+    const it2 = hit.intent;
 
-            addMsg(`${esc(fbText).replaceAll("\n","<br>")}${linksHtml}`, "kira");
-          }
+    if(it2.topic){
+      lastCat = it2.topic;
+      setActiveTopic(it2.topic);
+    }
+
+    const res2 = pickResponse(it2, t) || {text: hit.short || "", buttons:[]};
+    const text2 = String(res2.text || hit.short || "").trim();
+
+    lastHit = normalizeEntry({
+      id: it2.id || hit.id || "",
+      q: it2.id || hit.q || "",
+      cat: it2.topic || hit.cat || "Allgemein",
+      aliases: Array.isArray(it2.triggers) ? it2.triggers : (hit.aliases || []),
+      short: text2,
+      long: text2,
+      intent: it2
+    });
+
+    addMsg(`${esc(text2).replaceAll("
+","<br>")}${renderDashButtons(res2.buttons)}`, "kira");
+    bindDashButtons();
+  } else {
+    const fb = CFG?.fallback || {};
+    const fbText = String(fb.text || "").trim() || `${pick(microAcks)} Ich hab dazu gerade nichts Passendes im Wissen gefunden.`;
+
+    // Vorschläge: nimm die besten KB-Treffer (auch wenn sie unter dem Schwellwert liegen)
+    const scored = KB.map(e => ({q: e.q, s: scoreEntry(e, t)}))
+      .filter(x => x.s > 0)
+      .sort((a,b)=>b.s-a.s)
+      .slice(0,4)
+      .map(x => x.q);
+
+    const sugg = [...new Set(scored)].slice(0,4);
+    const suggHtml = sugg.length
+      ? `<div class="rk-subwrap">${sugg.map(q=>`<button class="rk-subtopic" data-q="${esc(q)}">${esc(q)}</button>`).join("")}</div>`
+      : "";
+
+    let linksHtml = "";
+    const p = fb.primary_link_id;
+    const s = fb.secondary_link_id;
+    const btns = [];
+    if(p && DATA?.links?.[p]?.url) btns.push({label: DATA.links[p].label || p, url: DATA.links[p].url});
+    if(s && DATA?.links?.[s]?.url) btns.push({label: DATA.links[s].label || s, url: DATA.links[s].url});
+    linksHtml = renderDashButtons(btns);
+
+    addMsg(`${esc(fbText).replaceAll("
+","<br>")}${linksHtml}${suggHtml}`, "kira");
+    bindSubButtons();
+  }
+}
           return;
         }
 
