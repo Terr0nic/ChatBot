@@ -1,60 +1,64 @@
 {
-  "meta": {
-    "brand": "Fahrschule Rakowski",
-    "version": "1.0.0",
-    "updated": "2025-12-31",
-    "notes": "Konfiguration für Kira (Browser-only). Alles im Dashboard editierbar."
-  },
+  "version": "1.0",
+  "updated": "2025-12-30",
   "voice": {
-    "language": "de-DE",
-    "addressing": "sie",
-    "tone": "nett_professionell",
-    "max_sentences": 5,
-    "use_emojis": "sparsam",
+    "addressing": "du",
+    "use_emojis": "mittel",
+    "max_sentences": 7,
     "bullets_preferred": true
+  },
+  "fallback": {
+    "text": "Meine Spürnase hat dazu gerade nichts im Wissen gefunden 🐾\nSchau am besten kurz auf unserer Homepage nach oder schreib uns – dann helfen wir dir sofort.",
+    "primary_link_id": "faq",
+    "secondary_link_id": "kontakt"
   },
   "ui": {
     "start_tiles": [
       {
-        "id": "anmeldung",
+        "id": "anmeldung_start",
         "label": "Anmeldung",
         "emoji": "📝"
       },
       {
-        "id": "termine",
-        "label": "Termine",
-        "emoji": "🗓️"
+        "id": "preise_kosten",
+        "label": "Preise",
+        "emoji": "💶"
       },
       {
-        "id": "seminare",
-        "label": "Seminare",
-        "emoji": "🎓"
+        "id": "ablauf_gesamt",
+        "label": "Ablauf",
+        "emoji": "🛣️"
+      },
+      {
+        "id": "theorie_unterricht",
+        "label": "Theorie",
+        "emoji": "📘"
+      },
+      {
+        "id": "theorie_pruefung",
+        "label": "Theorieprüfung",
+        "emoji": "🧠"
+      },
+      {
+        "id": "fahrstunden_anzahl",
+        "label": "Fahrstunden",
+        "emoji": "🚗"
+      },
+      {
+        "id": "praxis_pruefung",
+        "label": "Prüfung",
+        "emoji": "🏁"
+      },
+      {
+        "id": "seminar_auswahl",
+        "label": "ASF / FES",
+        "emoji": "🚨"
+      },
+      {
+        "id": "kontakt_filialen",
+        "label": "Kontakt",
+        "emoji": "☎️"
       }
-    ],
-    "show_suggested_chips": "fallback_or_unclear"
-  },
-  "holiday_mode": {
-    "enabled": false,
-    "from": "",
-    "to": "",
-    "back": "",
-    "message": "⚠️ Hinweis: Unser Büro ist vom {from} bis {to} im Urlaub. Ab {back} sind wir wieder wie gewohnt erreichbar.",
-    "apply_to_intents": [
-      "anmeldung",
-      "termine",
-      "pruefungen",
-      "fahrstunden",
-      "theorie",
-      "preise",
-      "standorte",
-      "seminare",
-      "umschreibung"
     ]
-  },
-  "fallback": {
-    "text": "Meine Spürnase hat dazu gerade nichts Passendes gefunden. Schauen Sie bitte in unsere Infos – oder melden Sie sich kurz bei uns.",
-    "primary_link_id": "faq",
-    "secondary_link_id": "kontakt",
-    "show_buttons": true
   }
 }
