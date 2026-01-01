@@ -1,0 +1,292 @@
+{
+  "version": "1.0",
+  "updated": "2025-12-30",
+  "cats": [
+    "Anmeldung",
+    "Preise",
+    "Ablauf",
+    "Theorie",
+    "Theorieprüfung",
+    "Fahrstunden",
+    "Praktische Prüfung",
+    "Probezeit / ASF / FES",
+    "B196",
+    "Motorrad (A)",
+    "LKW (C/CE)",
+    "Kontakt"
+  ],
+  "kb": [
+    {
+      "id": "anmeldung_start",
+      "cat": "Anmeldung",
+      "q": "Wie melde ich mich an?",
+      "aliases": [
+        "anmeldung",
+        "start",
+        "wie gehts los",
+        "führerschein anfangen",
+        "anmelden",
+        "einschreiben"
+      ],
+      "short": "Ganz easy: Komm bei uns in der Fahrschule vorbei (meist auch ohne Termin). Wir klären Klasse, Ablauf und starten alles mit dir.",
+      "long": "So läuft die Anmeldung meistens ab:\n- Kurz vorbeikommen oder anrufen\n- Wir besprechen: welche Klasse (B/A/C…), dein Zeitplan, deine Fragen\n- Du bekommst alle Infos zu Ablauf, Unterlagen und Kosten transparent erklärt\n\nWenn du willst: Sag mir deine Klasse und ob du schon Sehtest/Erste Hilfe/Passbild hast – dann sag ich dir, was du als Nächstes brauchst.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "anmeldung_unterlagen",
+      "cat": "Anmeldung",
+      "q": "Was brauche ich zur Anmeldung?",
+      "aliases": [
+        "unterlagen",
+        "mitbringen",
+        "was brauche ich",
+        "personalausweis",
+        "reisepass",
+        "anmeldung unterlagen"
+      ],
+      "short": "Meist reicht Personalausweis oder Reisepass. Wenn du Sehtest/Erste Hilfe/Passbild schon hast: gern mitbringen – ist aber nicht immer direkt nötig.",
+      "long": "Zur Anmeldung in der Regel:\n- Personalausweis oder Reisepass\n\nJe nach Klasse/Behörde werden später oft gebraucht:\n- Sehtest\n- Erste-Hilfe-Nachweis\n- Passbild\n\nKeine Sorge: Wenn etwas fehlt, sagen wir dir genau, was du wann brauchst. Für Details hilft dir unser Team bei uns in der Fahrschule oder auf unserer Homepage gern weiter.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "preise_kosten",
+      "cat": "Preise",
+      "q": "Was kostet der Führerschein?",
+      "aliases": [
+        "kosten",
+        "preis",
+        "wie teuer",
+        "gesamtpreis",
+        "führerschein kosten",
+        "was kostet klasse b",
+        "kosten führerschein"
+      ],
+      "short": "Der Gesamtpreis hängt vor allem davon ab, wie viele Übungsstunden du brauchst. Wir erklären dir die wichtigsten Kostenpunkte transparent – ohne Überraschungen.",
+      "long": "Die Hauptfaktoren sind meistens:\n- Grundbetrag / Anmeldung\n- Übungsstunden (je nachdem, wie schnell du sicher wirst)\n- Sonderfahrten (Pflichtanteile je nach Klasse)\n- Prüfungsgebühren (extern)\n\nWenn du magst: Sag mir deine Klasse (B/A/C) und ob du schon Fahrerfahrung hast – dann kann ich dir eine realistische grobe Einschätzung geben. Für exakte Zahlen: bei uns in der Fahrschule oder auf unserer Homepage.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "preise_raten",
+      "cat": "Preise",
+      "q": "Kann ich in Raten zahlen?",
+      "aliases": [
+        "raten",
+        "ratenzahlung",
+        "monatlich zahlen",
+        "in raten",
+        "zahlung aufteilen",
+        "abbezahlen"
+      ],
+      "short": "Ja – Ratenzahlung ist bei uns möglich. Sprich uns einfach kurz an, dann finden wir eine passende Lösung.",
+      "long": "Ratenzahlung ist grundsätzlich möglich.\n\nSo läuft’s meistens:\n- Du meldest dich ganz normal an.\n- Wir schauen gemeinsam, welche Rate realistisch ist.\n- Die Details klären wir kurz bei uns in der Fahrschule oder telefonisch.\n\nWenn du magst: Sag mir, um welche Klasse es geht (B/A/C), dann kann ich’s grob einordnen.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "ablauf_gesamt",
+      "cat": "Ablauf",
+      "q": "Wie läuft der Führerschein ab?",
+      "aliases": [
+        "ablauf",
+        "prozess",
+        "schritte",
+        "von anmeldung bis führerschein",
+        "wie läufts",
+        "weg zum führerschein"
+      ],
+      "short": "Kurz: Anmeldung → Antrag → Theorie → Theorieprüfung → Fahrstunden → praktische Prüfung → Führerschein 🎉",
+      "long": "Der grobe Ablauf ist:\n1) Anmeldung bei uns\n2) Antrag bei der Behörde (wir helfen dir dabei)\n3) Theorieunterricht + Lernen\n4) Theorieprüfung\n5) Fahrstunden (inkl. Sonderfahrten)\n6) Praktische Prüfung\n7) Führerschein 🎉\n\nWenn du willst: Sag mir kurz deine Klasse und ob du schon Theorie gemacht hast – dann kann ich dir eine realistische Reihenfolge & Timeline geben.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "ablauf_dauer",
+      "cat": "Ablauf",
+      "q": "Wie lange dauert der Führerschein?",
+      "aliases": [
+        "dauer",
+        "wie lange",
+        "zeit",
+        "wie schnell",
+        "wann fertig",
+        "führerschein dauer"
+      ],
+      "short": "Das ist sehr unterschiedlich: Antrag/Termine + wie regelmäßig du Theorie lernst und fährst. Wer konstant dranbleibt, kommt meist deutlich schneller durch.",
+      "long": "Ein paar Faktoren, die die Dauer stark beeinflussen:\n- Wie schnell der Antrag durch ist\n- Wie oft du Theorie machst und lernst\n- Wie regelmäßig du Fahrstunden nimmst (Konstanz = schneller)\n- Verfügbarkeit von Prüfungen\n\nTipp: 1–2 Fahrstunden pro Woche plus Theorie am Ball bleiben hilft enorm. Für eine Einschätzung passend zu deinem Alltag: bei uns in der Fahrschule oder auf unserer Homepage.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "theorie_unterricht",
+      "cat": "Theorie",
+      "q": "Wie läuft der Theorieunterricht ab?",
+      "aliases": [
+        "theorie",
+        "unterricht",
+        "theoriestunden",
+        "theorie kurs",
+        "theorie ablauf"
+      ],
+      "short": "Du kommst zu den Theorie-Einheiten, wir erklären die Themen verständlich & prüfungsnah. Parallel lernst du am besten mit der App – so sitzt es schnell.",
+      "long": "Im Theorieunterricht geht’s um Regeln, Gefahrenlehre und typische Verkehrssituationen.\n\nSo holst du am meisten raus:\n- Regelmäßig hingehen (nicht alles auf einmal)\n- App/Fragen parallel machen\n- Fehler verstehen statt nur auswendig\n\nWenn du willst: Sag mir, wo du hängst (Vorfahrt, Schilder, Vorfahrtsregel, etc.), dann erklär ich’s kurz.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "theorie_pruefung",
+      "cat": "Theorieprüfung",
+      "q": "Wie läuft die Theorieprüfung ab?",
+      "aliases": [
+        "theorieprüfung",
+        "prüfung theorie",
+        "fragen theorie",
+        "theorie test",
+        "prüfung am pc"
+      ],
+      "short": "Du machst die Theorieprüfung am PC mit Multiple-Choice-Fragen. Wenn du in der App stabil bestehst, bist du meistens sehr gut vorbereitet.",
+      "long": "Wichtige Punkte:\n- Die Prüfung läuft am PC (Fragen/Antworten anklicken)\n- Gute Vorbereitung: App-Training + Verständnis\n- Wenn du unsicher bist, lieber nochmal nachlernen statt „Glücksspiel“\n\nWenn du willst: Sag mir, ob du schon mit App lernst – dann geb ich dir einen einfachen Plan, wann du prüfungsreif bist.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "fahrstunden_anzahl",
+      "cat": "Fahrstunden",
+      "q": "Wie viele Fahrstunden brauche ich?",
+      "aliases": [
+        "fahrstunden",
+        "stunden",
+        "praxis",
+        "wie viele stunden",
+        "wie viele fahrstunden",
+        "uebungsstunden",
+        "übungsstunden"
+      ],
+      "short": "Das ist bei jedem unterschiedlich. Entscheidend sind Talent, Vorerfahrung und wie regelmäßig du fährst. Unser Ziel: sicher werden – ohne unnötige Stunden.",
+      "long": "Was die Anzahl beeinflusst:\n- Vorerfahrung (z. B. Verkehrsgefühl)\n- Wie regelmäßig du fährst (Konstanz bringt am meisten)\n- Nervosität/Stress und wie schnell du Routinen aufbaust\n\nTipp: Lieber regelmäßig fahren als selten „lange Sessions“. Für eine grobe Einschätzung passend zu dir: bei uns in der Fahrschule oder auf unserer Homepage.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "praxis_pruefung",
+      "cat": "Praktische Prüfung",
+      "q": "Wie läuft die praktische Prüfung ab?",
+      "aliases": [
+        "praktische prüfung",
+        "fahrprüfung",
+        "prüfung fahren",
+        "praxisprüfung",
+        "tüv prüfung"
+      ],
+      "short": "Du fährst mit Prüfer*in eine Strecke (Stadt/Land/Autobahn je nach Klasse) und zeigst, dass du sicher, vorausschauend und regelkonform fährst.",
+      "long": "Typisch in der Prüfung:\n- Fahrzeug-Check / ggf. Fragen zur Technik\n- Fahren im Verkehr (Spiegelblick, Abstand, Tempo, Beobachtung)\n- Grundfahraufgaben (z. B. Parken/Wenden – je nach Klasse)\n\nUnser Tipp: Ruhig bleiben, klar schauen, frühzeitig entscheiden. Wenn du willst: Ich nenne dir die häufigsten „unnötigen“ Fehler, die man easy vermeiden kann.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "probezeit_asf",
+      "cat": "Probezeit / ASF / FES",
+      "q": "Was ist ASF?",
+      "aliases": [
+        "asf",
+        "aufbauseminar",
+        "probezeit",
+        "asf kurs",
+        "aufbauseminar probezeit"
+      ],
+      "short": "ASF ist ein Aufbauseminar für Fahranfänger in der Probezeit. Es wird angeordnet, wenn man in der Probezeit auffällig wird (z. B. schwerer Verstoß).",
+      "long": "ASF kurz erklärt:\n- Aufbauseminar (mehrere Sitzungen)\n- Dazu gehört auch eine Fahrprobe\n- Teilnahme an allen Sitzungen ist verpflichtend\n\nWichtig: Bei verspätetem Erscheinen oder dem Fehlen einer Sitzung kann die Teilnahme am kompletten Kurs beendet werden.\n\nFür deinen konkreten Fall: bei uns in der Fahrschule oder auf unserer Homepage.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "probezeit_fes",
+      "cat": "Probezeit / ASF / FES",
+      "q": "Was ist FES?",
+      "aliases": [
+        "fes",
+        "punkte",
+        "punkteabbau",
+        "verkehrspsychologie",
+        "fes kurs",
+        "fahreignungsseminar"
+      ],
+      "short": "FES ist eine freiwillige verkehrspsychologische Maßnahme. Sie kann helfen, wenn man in der Probezeit erneut auffällig wurde – und ggf. beim Umgang mit Punkten.",
+      "long": "Wichtig (Punkteabbau):\n- Punkteabbau per FES ist nur bis maximal 5 Punkte möglich.\n- Ab 6–7 Punkten ist kein Abbau mehr möglich.\n\nFES ist keine „Strafe“, sondern Unterstützung.\n\nWenn du willst: Sag mir grob deine Situation – sonst hilft unser Team bei uns in der Fahrschule oder auf unserer Homepage.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "b196_info",
+      "cat": "B196",
+      "q": "Was ist B196?",
+      "aliases": [
+        "b196",
+        "125er",
+        "125",
+        "125cc",
+        "125 cm³",
+        "b196 führerschein"
+      ],
+      "short": "B196 ist eine Erweiterung des Autoführerscheins Klasse B: Du darfst damit 125er Motorräder fahren – ohne klassische Motorradprüfung.",
+      "long": "Kurz:\n- bis 125 cm³\n- max. 11 kW (15 PS)\n- gilt nur in Deutschland\n\nWenn du willst, sag kurz: willst du nur 125er oder später A2/A? Dann sag ich dir, was sinnvoller ist.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "motorrad_klassen",
+      "cat": "Motorrad (A)",
+      "q": "Welche Motorradklassen gibt es?",
+      "aliases": [
+        "motorrad",
+        "a1",
+        "a2",
+        "a",
+        "motorrad führerschein",
+        "klasse a"
+      ],
+      "short": "Es gibt grob A1 (leicht), A2 (mittel) und A (offen). Welche Klasse passt, hängt von Alter & Ziel ab.",
+      "long": "Kurzüberblick:\n- A1: Einstieg\n- A2: mittlere Klasse\n- A: offen\n\nPlus: Aufstiege je nach Vorbesitz. Für Details: bei uns in der Fahrschule oder auf unserer Homepage.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "lkw_klassen",
+      "cat": "LKW (C/CE)",
+      "q": "Welche LKW-Klassen gibt es?",
+      "aliases": [
+        "lkw",
+        "c",
+        "ce",
+        "c1",
+        "c1e",
+        "lkw führerschein",
+        "klasse c"
+      ],
+      "short": "Für LKW gibt’s grob C1/C1E (kleiner) und C/CE (großer LKW, ggf. mit Anhänger).",
+      "long": "Welche Klasse du brauchst, hängt davon ab, was du fahren möchtest (Gewicht/Anhänger). Für eine klare Einordnung: bei uns in der Fahrschule oder auf unserer Homepage.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    },
+    {
+      "id": "kontakt_filialen",
+      "cat": "Kontakt",
+      "q": "Wie erreiche ich euch?",
+      "aliases": [
+        "kontakt",
+        "telefon",
+        "adresse",
+        "öffnungszeiten",
+        "filiale",
+        "standort",
+        "mail"
+      ],
+      "short": "Am besten kurz anrufen oder bei uns in der Fahrschule vorbeikommen – dann klären wir alles schnell. Viele Infos findest du auch auf unserer Homepage.",
+      "long": "Kontakt & Infos:\n- Für Termin/Anmeldung: am schnellsten telefonisch oder direkt bei uns\n- Häufige Fragen (Ablauf/Preise/ASF/FES): auch auf unserer Homepage\n\nWenn du magst: Sag mir kurz, worum es geht – dann sag ich dir den schnellsten Weg.",
+      "createdAt": "2025-12-30T20:30:00+01:00",
+      "updatedAt": "2025-12-30T20:30:00+01:00"
+    }
+  ]
+}
