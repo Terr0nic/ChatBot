@@ -1,399 +1,1162 @@
-{
-  "version": "1.0",
-  "updated": "2025-12-30",
-  "intents": [
-    {
-      "id": "smalltalk_hallo",
-      "topic": "smalltalk",
-      "triggers": [
-        "hallo",
-        "hi",
-        "hey",
-        "guten morgen",
-        "guten tag",
-        "guten abend",
-        "servus",
-        "moin"
-      ],
-      "responses": {
-        "default": {
-          "text": "Hey 👋 Ich bin Kira. Worum geht’s bei dir – Anmeldung, Preise, Ablauf, Theorie, Fahrstunden oder Probezeit (ASF/FES)?",
-          "buttons": [
-            {
-              "label": "Anmeldung",
-              "send": "Wie melde ich mich an?"
-            },
-            {
-              "label": "Preise",
-              "send": "Was kostet der Führerschein?"
-            },
-            {
-              "label": "Probezeit (ASF/FES)",
-              "send": "Seminar"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "seminar_auswahl",
-      "topic": "probezeit",
-      "triggers": [
-        "seminar",
-        "seminare",
-        "kurs",
-        "aufbauseminar",
-        "punkteabbau",
-        "probezeit seminar",
-        "fes seminar",
-        "asf seminar"
-      ],
-      "responses": {
-        "default": {
-          "text": "Meinst du **ASF** (Probezeit / Aufbauseminar) oder **FES** (Punkteabbau)?",
-          "buttons": [
-            {
-              "label": "ASF (Probezeit)",
-              "send": "ASF"
-            },
-            {
-              "label": "FES (Punkteabbau)",
-              "send": "FES"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "anmeldung_start",
-      "topic": "anmeldung",
-      "triggers": [
-        "anmeldung",
-        "start",
-        "wie gehts los",
-        "führerschein anfangen",
-        "anmelden",
-        "einschreiben",
-        "wie melde ich mich an",
-        "melde",
-        "mich"
-      ],
-      "responses": {
-        "default": {
-          "text": "Ganz easy: Komm bei uns in der Fahrschule vorbei (meist auch ohne Termin). Wir klären Klasse, Ablauf und starten alles mit dir.\n\nSo läuft die Anmeldung meistens ab:\n- Kurz vorbeikommen oder anrufen\n- Wir besprechen: welche Klasse (B/A/C…), dein Zeitplan, deine Fragen\n- Du bekommst alle Infos zu Ablauf, Unterlagen und Kosten transparent erklärt\n\nWenn du willst: Sag mir deine Klasse und ob du schon Sehtest/Erste Hilfe/Passbild hast – dann sag ich dir, was du als Nächstes brauchst.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "anmeldung_unterlagen",
-      "topic": "anmeldung",
-      "triggers": [
-        "unterlagen",
-        "mitbringen",
-        "was brauche ich",
-        "personalausweis",
-        "reisepass",
-        "anmeldung unterlagen",
-        "was brauche ich zur anmeldung",
-        "brauche",
-        "anmeldung"
-      ],
-      "responses": {
-        "default": {
-          "text": "Meist reicht Personalausweis oder Reisepass. Wenn du Sehtest/Erste Hilfe/Passbild schon hast: gern mitbringen – ist aber nicht immer direkt nötig.\n\nZur Anmeldung in der Regel:\n- Personalausweis oder Reisepass\n\nJe nach Klasse/Behörde werden später oft gebraucht:\n- Sehtest\n- Erste-Hilfe-Nachweis\n- Passbild\n\nKeine Sorge: Wenn etwas fehlt, sagen wir dir genau, was du wann brauchst. Für Details hilft dir unser Team bei uns in der Fahrschule oder auf unserer Homepage gern weiter.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "preise_kosten",
-      "topic": "preise",
-      "triggers": [
-        "kosten",
-        "preis",
-        "wie teuer",
-        "gesamtpreis",
-        "führerschein kosten",
-        "was kostet klasse b",
-        "kosten führerschein",
-        "was kostet der führerschein",
-        "kostet",
-        "führerschein"
-      ],
-      "responses": {
-        "default": {
-          "text": "Der Gesamtpreis hängt vor allem davon ab, wie viele Übungsstunden du brauchst. Wir erklären dir die wichtigsten Kostenpunkte transparent – ohne Überraschungen.\n\nDie Hauptfaktoren sind meistens:\n- Grundbetrag / Anmeldung\n- Übungsstunden (je nachdem, wie schnell du sicher wirst)\n- Sonderfahrten (Pflichtanteile je nach Klasse)\n- Prüfungsgebühren (extern)\n\nWenn du magst: Sag mir deine Klasse (B/A/C) und ob du schon Fahrerfahrung hast – dann kann ich dir eine realistische grobe Einschätzung geben. Für exakte Zahlen: bei uns in der Fahrschule oder auf unserer Homepage.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "preise_raten",
-      "topic": "preise",
-      "triggers": [
-        "raten",
-        "ratenzahlung",
-        "monatlich zahlen",
-        "in raten",
-        "zahlung aufteilen",
-        "abbezahlen",
-        "kann ich in raten zahlen",
-        "kann",
-        "zahlen"
-      ],
-      "responses": {
-        "default": {
-          "text": "Ja – Ratenzahlung ist bei uns möglich. Sprich uns einfach kurz an, dann finden wir eine passende Lösung.\n\nRatenzahlung ist grundsätzlich möglich.\n\nSo läuft’s meistens:\n- Du meldest dich ganz normal an.\n- Wir schauen gemeinsam, welche Rate realistisch ist.\n- Die Details klären wir kurz bei uns in der Fahrschule oder telefonisch.\n\nWenn du magst: Sag mir, um welche Klasse es geht (B/A/C), dann kann ich’s grob einordnen.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "ablauf_gesamt",
-      "topic": "ablauf",
-      "triggers": [
-        "ablauf",
-        "prozess",
-        "schritte",
-        "von anmeldung bis führerschein",
-        "wie läufts",
-        "weg zum führerschein",
-        "wie läuft der führerschein ab",
-        "läuft",
-        "führerschein"
-      ],
-      "responses": {
-        "default": {
-          "text": "Kurz: Anmeldung → Antrag → Theorie → Theorieprüfung → Fahrstunden → praktische Prüfung → Führerschein 🎉\n\nDer grobe Ablauf ist:\n1) Anmeldung bei uns\n2) Antrag bei der Behörde (wir helfen dir dabei)\n3) Theorieunterricht + Lernen\n4) Theorieprüfung\n5) Fahrstunden (inkl. Sonderfahrten)\n6) Praktische Prüfung\n7) Führerschein 🎉\n\nWenn du willst: Sag mir kurz deine Klasse und ob du schon Theorie gemacht hast – dann kann ich dir eine realistische Reihenfolge & Timeline geben.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "ablauf_dauer",
-      "topic": "ablauf",
-      "triggers": [
-        "dauer",
-        "wie lange",
-        "zeit",
-        "wie schnell",
-        "wann fertig",
-        "führerschein dauer",
-        "wie lange dauert der führerschein",
-        "lange",
-        "dauert",
-        "führerschein"
-      ],
-      "responses": {
-        "default": {
-          "text": "Das ist sehr unterschiedlich: Antrag/Termine + wie regelmäßig du Theorie lernst und fährst. Wer konstant dranbleibt, kommt meist deutlich schneller durch.\n\nEin paar Faktoren, die die Dauer stark beeinflussen:\n- Wie schnell der Antrag durch ist\n- Wie oft du Theorie machst und lernst\n- Wie regelmäßig du Fahrstunden nimmst (Konstanz = schneller)\n- Verfügbarkeit von Prüfungen\n\nTipp: 1–2 Fahrstunden pro Woche plus Theorie am Ball bleiben hilft enorm. Für eine Einschätzung passend zu deinem Alltag: bei uns in der Fahrschule oder auf unserer Homepage.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "theorie_unterricht",
-      "topic": "theorie",
-      "triggers": [
-        "theorie",
-        "unterricht",
-        "theoriestunden",
-        "theorie kurs",
-        "theorie ablauf",
-        "wie läuft der theorieunterricht ab",
-        "läuft",
-        "theorieunterricht"
-      ],
-      "responses": {
-        "default": {
-          "text": "Du kommst zu den Theorie-Einheiten, wir erklären die Themen verständlich & prüfungsnah. Parallel lernst du am besten mit der App – so sitzt es schnell.\n\nIm Theorieunterricht geht’s um Regeln, Gefahrenlehre und typische Verkehrssituationen.\n\nSo holst du am meisten raus:\n- Regelmäßig hingehen (nicht alles auf einmal)\n- App/Fragen parallel machen\n- Fehler verstehen statt nur auswendig\n\nWenn du willst: Sag mir, wo du hängst (Vorfahrt, Schilder, Vorfahrtsregel, etc.), dann erklär ich’s kurz.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "theorie_pruefung",
-      "topic": "theorieprufung",
-      "triggers": [
-        "theorieprüfung",
-        "prüfung theorie",
-        "fragen theorie",
-        "theorie test",
-        "prüfung am pc",
-        "wie läuft die theorieprüfung ab",
-        "läuft"
-      ],
-      "responses": {
-        "default": {
-          "text": "Du machst die Theorieprüfung am PC mit Multiple-Choice-Fragen. Wenn du in der App stabil bestehst, bist du meistens sehr gut vorbereitet.\n\nWichtige Punkte:\n- Die Prüfung läuft am PC (Fragen/Antworten anklicken)\n- Gute Vorbereitung: App-Training + Verständnis\n- Wenn du unsicher bist, lieber nochmal nachlernen statt „Glücksspiel“\n\nWenn du willst: Sag mir, ob du schon mit App lernst – dann geb ich dir einen einfachen Plan, wann du prüfungsreif bist.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "fahrstunden_anzahl",
-      "topic": "fahrstunden",
-      "triggers": [
-        "fahrstunden",
-        "stunden",
-        "praxis",
-        "wie viele stunden",
-        "wie viele fahrstunden",
-        "übungsstunden",
-        "wie viele fahrstunden brauche ich",
-        "viele",
-        "brauche"
-      ],
-      "responses": {
-        "default": {
-          "text": "Das ist bei jedem unterschiedlich. Entscheidend sind Talent, Vorerfahrung und wie regelmäßig du fährst. Unser Ziel: sicher werden – ohne unnötige Stunden.\n\nWas die Anzahl beeinflusst:\n- Vorerfahrung (z. B. Verkehrsgefühl)\n- Wie regelmäßig du fährst (Konstanz bringt am meisten)\n- Nervosität/Stress und wie schnell du Routinen aufbaust\n\nTipp: Lieber regelmäßig fahren als selten „lange Sessions“. Für eine grobe Einschätzung passend zu dir: bei uns in der Fahrschule oder auf unserer Homepage.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "praxis_pruefung",
-      "topic": "praktische_prufung",
-      "triggers": [
-        "praktische prüfung",
-        "fahrprüfung",
-        "prüfung fahren",
-        "praxisprüfung",
-        "tüv prüfung",
-        "wie läuft die praktische prüfung ab",
-        "läuft",
-        "praktische",
-        "prüfung"
-      ],
-      "responses": {
-        "default": {
-          "text": "Du fährst mit Prüfer*in eine Strecke (Stadt/Land/Autobahn je nach Klasse) und zeigst, dass du sicher, vorausschauend und regelkonform fährst.\n\nTypisch in der Prüfung:\n- Fahrzeug-Check / ggf. Fragen zur Technik\n- Fahren im Verkehr (Spiegelblick, Abstand, Tempo, Beobachtung)\n- Grundfahraufgaben (z. B. Parken/Wenden – je nach Klasse)\n\nUnser Tipp: Ruhig bleiben, klar schauen, frühzeitig entscheiden. Wenn du willst: Ich nenne dir die häufigsten „unnötigen“ Fehler, die man easy vermeiden kann.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "probezeit_asf",
-      "topic": "probezeit_asf_fes",
-      "triggers": [
-        "asf",
-        "aufbauseminar",
-        "probezeit",
-        "asf kurs",
-        "aufbauseminar probezeit",
-        "was ist asf"
-      ],
-      "responses": {
-        "default": {
-          "text": "ASF ist ein Aufbauseminar für Fahranfänger in der Probezeit. Es wird angeordnet, wenn man in der Probezeit auffällig wird (z. B. schwerer Verstoß).\n\nASF kurz erklärt:\n- Aufbauseminar (mehrere Sitzungen)\n- Dazu gehört auch eine Fahrprobe\n- Teilnahme an allen Sitzungen ist verpflichtend\n\nWichtig: Bei verspätetem Erscheinen oder dem Fehlen einer Sitzung kann die Teilnahme am kompletten Kurs beendet werden.\n\nFür deinen konkreten Fall (welcher Verstoß / welche Frist): bei uns in der Fahrschule oder auf unserer Homepage.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "probezeit_fes",
-      "topic": "probezeit_asf_fes",
-      "triggers": [
-        "fes",
-        "punkte",
-        "punkteabbau",
-        "verkehrspsychologie",
-        "fes kurs",
-        "was ist fes"
-      ],
-      "responses": {
-        "default": {
-          "text": "FES ist eine freiwillige verkehrspsychologische Maßnahme. Sie kann helfen, wenn man in der Probezeit erneut auffällig wurde – und ggf. beim Umgang mit Punkten.\n\nWichtig (Punkteabbau):\n- Punkteabbau per FES ist nur bis maximal 5 Punkte möglich.\n- Ab 6–7 Punkten ist kein Abbau mehr möglich.\n\nFES ist keine „Strafe“, sondern Unterstützung, damit es in Zukunft besser läuft.\n\nWenn du willst: Sag mir grob deinen Punktestand bzw. die Situation – sonst hilft unser Team bei uns in der Fahrschule oder auf unserer Homepage.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "b196_info",
-      "topic": "b196",
-      "triggers": [
-        "b196",
-        "125er",
-        "125",
-        "125cc",
-        "125 cm³",
-        "b196 führerschein",
-        "was ist b196"
-      ],
-      "responses": {
-        "default": {
-          "text": "B196 ist eine Erweiterung des Autoführerscheins Klasse B: Du darfst damit 125er Motorräder fahren – ohne klassische Motorradprüfung.\n\nWas du mit B196 fahren darfst:\n- Motorräder bis 125 cm³\n- Max. 11 kW (15 PS)\n- Leistungsgewicht max. 0,1 kW/kg\n- Dreirädrige Kraftfahrzeuge bis 15 kW\n\nVoraussetzungen:\n- Mind. 5 Jahre Klasse B\n- Mindestalter: 25 Jahre\n- Fahrerschulung in der Fahrschule\n\nAblauf der Schulung (9×90 Minuten):\n- 4× Theorie\n- 5× Praxis\n\nDauer: Wir bieten z. B. 2 Unterrichtseinheiten pro Freitag – damit ist es oft in ca. 2 Wochen erledigt.\n\nPrüfung? Nein – keine Theorie- und keine Praxisprüfung.\n\nGültigkeit: B196 gilt nur in Deutschland.\n\nWichtig: B196 ist keine eigene Motorradklasse, daher kein direkter Aufstieg auf A2/A möglich.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "motorrad_klassen",
-      "topic": "motorrad_a",
-      "triggers": [
-        "motorrad",
-        "a1",
-        "a2",
-        "a",
-        "motorrad führerschein",
-        "klasse a",
-        "welche motorradklassen gibt es",
-        "welche",
-        "motorradklassen",
-        "gibt"
-      ],
-      "responses": {
-        "default": {
-          "text": "Es gibt grob A1 (leichter), A2 (mittel) und A (offen). Welche Klasse zu dir passt, hängt von Alter und Zielen ab.\n\nKurzüberblick:\n- A1: Einstieg in leichtere Motorräder\n- A2: „Mittlere“ Klasse (oft der nächste Step)\n- A: offen / ohne Begrenzung\n\nDazu gibt’s je nach Vorbesitz auch Aufstiege (z. B. von A1→A2 oder A2→A).\n\nWelche Klasse für dich möglich ist und wie schnell es geht, hängt u. a. von deinem Alter und Vorbesitz ab. Für Details: bei uns in der Fahrschule oder auf unserer Homepage.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "lkw_klassen",
-      "topic": "lkw_c_ce",
-      "triggers": [
-        "lkw",
-        "c",
-        "ce",
-        "c1",
-        "c1e",
-        "lkw führerschein",
-        "klasse c",
-        "welche lkwklassen gibt es",
-        "welche",
-        "lkwklassen",
-        "gibt"
-      ],
-      "responses": {
-        "default": {
-          "text": "Für LKW gibt’s grob C1/C1E (kleiner) und C/CE (großer LKW, ggf. mit Anhänger).\n\nKurzüberblick:\n- C1: „kleiner“ LKW\n- C1E: C1 mit Anhänger\n- C: „großer“ LKW\n- CE: C mit Anhänger (Zugkombination)\n\nWelche Klasse du brauchst, hängt davon ab, was du fahren möchtest (Gewicht/Anhänger). Für eine klare Einordnung: bei uns in der Fahrschule oder auf unserer Homepage.",
-          "buttons": []
-        }
-      }
-    },
-    {
-      "id": "kontakt_filialen",
-      "topic": "kontakt",
-      "triggers": [
-        "kontakt",
-        "telefon",
-        "adresse",
-        "öffnungszeiten",
-        "filiale",
-        "standort",
-        "mail",
-        "wie erreiche ich euch",
-        "erreiche",
-        "euch"
-      ],
-      "responses": {
-        "default": {
-          "text": "Am besten kurz anrufen oder bei uns in der Fahrschule vorbeikommen – dann klären wir alles schnell. Viele Infos findest du auch auf unserer Homepage.\n\nKontakt & Infos:\n- Für Termin/Anmeldung: am schnellsten telefonisch oder direkt bei uns in der Fahrschule\n- Häufige Fragen (Ablauf/Preise/ASF/FES): auch auf unserer Homepage\n\nWenn du magst: Sag mir, worum es geht (Klasse, Termin, Problem) – dann sag ich dir, was der schnellste Weg ist.",
-          "buttons": []
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kira – Digitale Rakowski-Helferin</title>
+  <meta name="description" content="Kira – Digitale Rakowski-Helferin. Kurz, klar, hilfreich. 'mehr' für Details." />
+  <style>
+    :root{
+      --rk-orange:#ff8a00;
+      --rk-blue:#1e6bff;
+      --rk-ink:#0f172a;
+      --rk-line:#e7eef7;
+      --rk-soft:#f6f9ff;
+      --rk-shadow:0 14px 40px rgba(15,23,42,.10);
+      /* Dashboard-Theme-Bridge (Defaults = altes Design) */
+      --kira-accent: var(--rk-orange);
+      --kira-accent2: var(--rk-blue);
+      --kira-bg: #fff;
+      --kira-card: #fff;
+    }
+    body{
+      margin:0;
+      background:#fff;
+      color:var(--rk-ink);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Apple Color Emoji","Segoe UI Emoji";
+    }
+    .page{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:22px;
+      background:
+        radial-gradient(900px 340px at 20% 0%,rgba(255,138,0,.10),transparent 60%),
+        radial-gradient(900px 320px at 90% 10%,rgba(30,107,255,.10),transparent 60%),
+        var(--kira-bg);
+    }
+
+    /* Widget shell */
+    .rk-kira{
+      width:min(980px,100%);
+      background:var(--kira-card);
+      border:1px solid var(--rk-line);
+      border-radius:22px;
+      box-shadow:var(--rk-shadow);
+      overflow:hidden;
+      position:relative; /* für Toast */
+    }
+
+    /* Top bar */
+    .rk-kira-top{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:14px 16px;
+      background:linear-gradient(90deg,rgba(255,138,0,.16),rgba(30,107,255,.14)),#fff;
+      border-bottom:1px solid var(--rk-line);
+    }
+    .rk-brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .rk-logo{
+      height:34px;width:auto;object-fit:contain;background:#fff;border-radius:10px;
+      padding:4px 6px;border:1px solid rgba(15,23,42,.06);
+    }
+    .rk-brand-text{min-width:0}
+    .rk-title{font-weight:900;color:var(--rk-ink);line-height:1.05}
+    .rk-sub{font-size:13px;color:rgba(15,23,42,.72);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:620px}
+    .rk-status{
+      display:flex;align-items:center;gap:8px;font-weight:700;color:rgba(15,23,42,.75);
+      font-size:13px;background:rgba(255,255,255,.65);border:1px solid rgba(15,23,42,.08);
+      padding:8px 10px;border-radius:999px;flex:0 0 auto;
+    }
+    .rk-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+
+    /* Layout */
+    .rk-kira-main{display:grid;grid-template-columns:360px 1fr;background:#fff}
+    .rk-left{
+      border-right:1px solid var(--rk-line);
+      background:radial-gradient(800px 280px at 25% 0%,rgba(255,138,0,.10),transparent 60%),
+                 radial-gradient(700px 240px at 90% 10%,rgba(30,107,255,.10),transparent 60%),#fff;
+      padding:14px;
+    }
+    .rk-portrait{
+      border-radius:18px;overflow:hidden;border:1px solid rgba(15,23,42,.08);
+      box-shadow:0 10px 24px rgba(15,23,42,.10);background:#fff;
+    }
+    .rk-portrait img{width:100%;height:290px;object-fit:cover;display:block}
+    .rk-left-card{
+      margin-top:12px;background:rgba(255,255,255,.86);border:1px solid rgba(15,23,42,.08);
+      border-radius:18px;padding:12px;box-shadow:0 10px 22px rgba(15,23,42,.08);
+    }
+    .rk-left-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+    .rk-badge{
+      font-weight:900;color:var(--rk-ink);background:rgba(255,138,0,.16);border:1px solid rgba(255,138,0,.26);
+      padding:6px 10px;border-radius:999px;font-size:13px;white-space:nowrap;
+    }
+    .rk-mini{font-size:12.5px;color:rgba(15,23,42,.70);text-align:right;line-height:1.2}
+    .rk-menu-title{font-weight:900;color:rgba(15,23,42,.82);font-size:13px;margin:8px 2px;letter-spacing:.2px}
+    .rk-menu{display:flex;flex-direction:column;gap:8px; max-height: 310px; overflow:auto; padding-right:4px;}
+    .rk-menu::-webkit-scrollbar{width:10px}
+    .rk-menu::-webkit-scrollbar-thumb{background:rgba(15,23,42,.10);border-radius:999px;border:2px solid rgba(255,255,255,.7)}
+    .rk-menu::-webkit-scrollbar-track{background:transparent}
+
+    .rk-topic{
+      text-align:left;width:100%;
+      border:1px solid rgba(30,107,255,.20);
+      background:rgba(30,107,255,.05);
+      color:var(--rk-ink);
+      border-radius:14px;padding:10px 12px;font-size:14px;cursor:pointer;
+      transition:transform .08s ease,background .12s ease,border-color .12s ease;
+      position:relative;
+    }
+    .rk-topic:hover{background:rgba(255,138,0,.10);border-color:rgba(255,138,0,.28);transform:translateY(-1px)}
+    .rk-topic:active{transform:translateY(0)}
+
+    .rk-note{
+      margin-top:12px;font-size:12.5px;color:rgba(15,23,42,.62);
+      background:rgba(255,138,0,.10);border:1px solid rgba(255,138,0,.20);
+      padding:9px 10px;border-radius:14px;
+    }
+
+    /* Right chat */
+    .rk-right{display:flex;flex-direction:column;min-height:560px;background:#fff}
+    .rk-chat{padding:16px 16px 10px;flex:1 1 auto;overflow:auto;background:#fff}
+    .rk-msg{display:flex;margin:10px 0}
+    .rk-msg-kira{justify-content:flex-start}
+    .rk-msg-user{justify-content:flex-end}
+    .rk-bubble-wrap{display:flex;gap:10px;align-items:flex-end}
+    .rk-msg-user .rk-bubble-wrap{justify-content:flex-end}
+
+    .rk-avatar-mini{
+      width:28px;height:28px;border-radius:10px;overflow:hidden;
+      border:1px solid rgba(15,23,42,.10);background:#fff;flex:0 0 auto;
+      box-shadow:0 6px 14px rgba(15,23,42,.08);
+    }
+    .rk-avatar-mini img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .rk-bubble{
+      max-width:78%;
+      padding:10px 12px;border-radius:16px;line-height:1.35;font-size:14.5px;
+      border:1px solid var(--rk-line);background:var(--rk-soft);color:var(--rk-ink);
+      box-shadow:0 8px 16px rgba(15,23,42,.06);
+      animation:rkPop .16s ease-out;
+    }
+    .rk-msg-user .rk-bubble{
+      background:linear-gradient(135deg,rgba(255,138,0,.18),rgba(30,107,255,.12));
+      border:1px solid rgba(255,138,0,.22);
+    }
+    .rk-time{margin-top:6px;font-size:11px;color:rgba(15,23,42,.45)}
+
+    .rk-typing{display:inline-flex;gap:5px;align-items:center}
+    .rk-typing span{width:6px;height:6px;border-radius:50%;background:rgba(15,23,42,.45);animation:rkDot 1.1s infinite ease-in-out}
+    .rk-typing span:nth-child(2){animation-delay:.15s}
+    .rk-typing span:nth-child(3){animation-delay:.30s}
+
+    .rk-subwrap{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+    .rk-subtopic{
+      border:1px solid rgba(30,107,255,.22);
+      background:rgba(30,107,255,.06);
+      color:#0f172a;border-radius:999px;padding:8px 10px;font-size:13px;cursor:pointer;
+      transition:transform .08s ease,background .12s ease,border-color .12s ease;
+    }
+    .rk-subtopic:hover{background:rgba(255,138,0,.12);border-color:rgba(255,138,0,.30);transform:translateY(-1px)}
+    .rk-subtopic:active{transform:translateY(0)}
+
+    .rk-inputbar{
+      padding:12px 16px 10px;border-top:1px solid var(--rk-line);
+      display:flex;gap:10px;background:#fff;
+    }
+    .rk-input{
+      flex:1 1 auto;border:1px solid var(--rk-line);border-radius:14px;padding:12px 12px;
+      font-size:14.5px;outline:none;background:#fff;
+    }
+    .rk-input:focus{border-color:rgba(30,107,255,.45);box-shadow:0 0 0 4px rgba(30,107,255,.12)}
+    .rk-send{
+      width:50px;border:0;border-radius:14px;cursor:pointer;font-size:18px;color:#fff;
+      background:linear-gradient(135deg,var(--rk-orange),var(--rk-blue));
+      box-shadow:0 12px 18px rgba(30,107,255,.18);
+      transition:transform .08s ease,filter .12s ease;
+    }
+    .rk-send:hover{filter:brightness(1.03);transform:translateY(-1px)}
+    .rk-send:active{transform:translateY(0)}
+    .rk-footnote{padding:0 16px 14px;color:rgba(15,23,42,.60);font-size:12.5px;background:#fff}
+
+    /* Active Topic (Highlight + Ping) */
+    .rk-topic.is-active{
+      background: linear-gradient(135deg, rgba(255,138,0,.14), rgba(30,107,255,.10));
+      border-color: rgba(30,107,255,.34);
+      box-shadow: 0 10px 22px rgba(30,107,255,.10);
+      overflow:hidden;
+    }
+    .rk-topic.is-active::after{
+      content:"";
+      position:absolute;
+      left:10px; right:10px; bottom:6px;
+      height:2px;
+      background: linear-gradient(90deg, var(--rk-orange), var(--rk-blue));
+      border-radius:999px;
+      opacity:.85;
+    }
+    .rk-topic.is-active::before{
+      content:"";
+      position:absolute;
+      top:10px; right:12px;
+      width:10px; height:10px;
+      border-radius:50%;
+      background: var(--rk-blue);
+      box-shadow: 0 0 0 0 rgba(30,107,255,.35);
+      animation: rkPing 1.2s ease-out 1;
+    }
+
+    /* Toast */
+    .rk-toast{
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      transform: translateY(-8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+      z-index: 50;
+    }
+    .rk-toast.is-show{ opacity: 1; transform: translateY(0); }
+    .rk-toast-inner{
+      display:flex; align-items:center; gap:10px;
+      background: rgba(255,255,255,.92);
+      border:1px solid rgba(15,23,42,.10);
+      border-radius: 16px;
+      padding: 10px 12px;
+      box-shadow: 0 16px 34px rgba(15,23,42,.14);
+      backdrop-filter: blur(10px);
+    }
+    .rk-toast-emoji{
+      width:34px; height:34px;
+      border-radius: 12px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, rgba(255,138,0,.18), rgba(30,107,255,.14));
+      border:1px solid rgba(30,107,255,.18);
+      font-size: 18px;
+    }
+    .rk-toast-title{ font-weight: 900; color: var(--rk-ink); font-size: 13px; line-height: 1.1; }
+    .rk-toast-sub{ color: rgba(15,23,42,.68); font-size: 12.5px; line-height: 1.15; }
+
+    @keyframes rkDot{0%,80%,100%{transform:translateY(0);opacity:.45}40%{transform:translateY(-3px);opacity:1}}
+    @keyframes rkPop{from{transform:translateY(4px);opacity:0}to{transform:translateY(0);opacity:1}}
+    @keyframes rkPing{
+      0%{ box-shadow: 0 0 0 0 rgba(30,107,255,.35); opacity:1; transform:scale(1); }
+      70%{ box-shadow: 0 0 0 12px rgba(30,107,255,0); opacity:.65; transform:scale(1.05); }
+      100%{ box-shadow: 0 0 0 18px rgba(30,107,255,0); opacity:0; transform:scale(1); }
+    }
+
+    @media (max-width:860px){
+      .page{padding:12px}
+      .rk-kira-main{grid-template-columns:1fr}
+      .rk-left{border-right:0;border-bottom:1px solid var(--rk-line)}
+      .rk-portrait img{height:240px}
+      .rk-sub{max-width:360px}
+      .rk-menu{max-height:unset}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="rk-kira" id="rkKira">
+      <div class="rk-kira-top">
+        <div class="rk-brand">
+          <img class="rk-logo" id="rkLogo" alt="Fahrschule Rakowski" />
+          <div class="rk-brand-text">
+            <div class="rk-title">Kira</div>
+            <div class="rk-sub">Digitale Rakowski-Helferin • Thema anklicken oder Frage tippen</div>
+          </div>
+        </div>
+        <div class="rk-status"><span class="rk-dot"></span>online</div>
+
+        <!-- Toast -->
+        <div class="rk-toast" id="rkToast" aria-hidden="true">
+          <div class="rk-toast-inner">
+            <div class="rk-toast-emoji" id="rkToastEmoji">💬</div>
+            <div>
+              <div class="rk-toast-title" id="rkToastTitle">Thema gesetzt</div>
+              <div class="rk-toast-sub" id="rkToastSub">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rk-kira-main">
+        <!-- LEFT -->
+        <div class="rk-left">
+          <div class="rk-portrait"><img id="rkKiraImg" alt="Kira" /></div>
+
+          <div class="rk-left-card">
+            <div class="rk-left-head">
+              <span class="rk-badge">🐾 Kira</span>
+              <span class="rk-mini">Kurz • <b>mehr</b> für Details</span>
+            </div>
+
+            <div class="rk-menu-title">Themen</div>
+            <div class="rk-menu" id="rkTopics"></div>
+
+            <div class="rk-note">
+              Tipp: Schreib <b>mehr</b> oder <b>noch mehr</b> – dann gehe ich tiefer rein.
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="rk-right">
+          <div class="rk-chat" id="rkChat" aria-live="polite">
+            <div class="rk-msg rk-msg-kira">
+              <div class="rk-bubble-wrap">
+                <div class="rk-avatar-mini"><img id="rkKiraMini" alt=""></div>
+                <div class="rk-bubble">
+                  <div id="rkGreetingLine"><b>Hey 👋</b> Ich bin Kira.</div>
+                  <div style="margin-top:6px;">
+                    Klick links ein Thema an oder stell mir deine Frage.<br>
+                    Ich antworte zuerst kurz – für Details einfach <b>„mehr“</b> schreiben.
+                  </div>
+                  <div class="rk-time" id="rkHelloTime"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rk-inputbar">
+            <input class="rk-input" id="rkInput" placeholder="Schreib deine Frage… (z.B. „Was ist B196?“)" />
+            <button class="rk-send" id="rkSend" aria-label="Senden">➤</button>
+          </div>
+
+          <div class="rk-footnote">🚦 Rakowski-Style: kurz, klar, hilfreich – „mehr“ für Details</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ✅ Deine Bilder
+    const LOGO_IMG_URL = "https://image.jimcdn.com/app/cms/image/transf/dimension=320x10000:format=png/path/s91fafdaaa718653a/image/ifc8ee5d4fcd84b85/version/1766920436/image.png";
+    const KIRA_IMG_URL = "https://image.jimcdn.com/app/cms/image/transf/dimension=288x10000:format=png/path/s91fafdaaa718653a/image/ifb04a74e30629f43/version/1767092791/image.png";
+
+    // ✅ Deine GitHub-KB (RAW)
+    const KB_URL = "https://raw.githubusercontent.com/Terr0nic/rakowski-chatbot/refs/heads/main/chatbot-wissen.json";
+
+    // Dashboard-Brain-Dateien (liegen idealerweise neben index.html)
+    // Robust: erst lokal/relativ, dann feste GitHub-Pages-Fallbacks (falls die Seite z.B. eingebettet ist)
+    const DASH_FILES = {
+      cfg:  "kira.config.json",
+      data: "kira.data.json",
+      int:  "kira.intents.json",
+    };
+
+    const DASH_BASE_URLS = [
+      "./", // gleicher Ordner wie index.html (GitHub Pages / lokaler Server)
+      "./ChatBot/", // falls du versehentlich alles in einen Unterordner hochgeladen hast
+      "https://terr0nic.github.io/ChatBot/", // Fallback (achtet auf Groß/Klein!)
+      "https://terr0nic.github.io/Chatbot/",
+    ];
+
+    // Eingebaute Defaults (damit Kira IMMER läuft – selbst wenn JSON-Dateien fehlen)
+    const EMBED_CFG = {"version": "1.0", "updated": "2025-12-30", "voice": {"addressing": "du", "use_emojis": "mittel", "max_sentences": 7, "bullets_preferred": true}, "fallback": {"text": "Meine Spürnase hat dazu gerade nichts im Wissen gefunden 🐾\nSchau am besten kurz auf unserer Homepage nach oder schreib uns – dann helfen wir dir sofort.", "primary_link_id": "faq", "secondary_link_id": "kontakt"}, "ui": {"start_tiles": [{"id": "anmeldung_start", "label": "Anmeldung", "emoji": "📝"}, {"id": "preise_kosten", "label": "Preise", "emoji": "💶"}, {"id": "ablauf_gesamt", "label": "Ablauf", "emoji": "🛣️"}, {"id": "theorie_unterricht", "label": "Theorie", "emoji": "📘"}, {"id": "theorie_pruefung", "label": "Theorieprüfung", "emoji": "🧠"}, {"id": "fahrstunden_anzahl", "label": "Fahrstunden", "emoji": "🚗"}, {"id": "praxis_pruefung", "label": "Prüfung", "emoji": "🏁"}, {"id": "seminar_auswahl", "label": "ASF / FES", "emoji": "🚨"}, {"id": "kontakt_filialen", "label": "Kontakt", "emoji": "☎️"}]}};
+    const EMBED_DATA = {"version": "1.0", "updated": "2025-12-30", "links": {"homepage": {"label": "Homepage", "url": "https://www.fahrschule-rakowski.eu/"}, "faq": {"label": "FAQ", "url": "https://www.fahrschule-rakowski.eu/faq-1/"}, "termine": {"label": "Termine", "url": "https://www.fahrschule-rakowski.eu/termine/"}, "kontakt": {"label": "Kontakt", "url": "https://www.fahrschule-rakowski.eu/kontakt/"}}, "branches": [], "exam_locations": []};
+    const EMBED_INT = {"version": "1.0", "updated": "2025-12-30", "intents": [{"id": "smalltalk_hallo", "topic": "smalltalk", "triggers": ["hallo", "hi", "hey", "guten morgen", "guten tag", "guten abend", "servus", "moin"], "responses": {"default": {"text": "Hey 👋 Ich bin Kira. Worum geht’s bei dir – Anmeldung, Preise, Ablauf, Theorie, Fahrstunden oder Probezeit (ASF/FES)?", "buttons": [{"label": "Anmeldung", "send": "Wie melde ich mich an?"}, {"label": "Preise", "send": "Was kostet der Führerschein?"}, {"label": "Probezeit (ASF/FES)", "send": "Seminar"}]}}}, {"id": "seminar_auswahl", "topic": "probezeit", "triggers": ["seminar", "seminare", "kurs", "aufbauseminar", "punkteabbau", "probezeit seminar", "fes seminar", "asf seminar"], "responses": {"default": {"text": "Meinst du **ASF** (Probezeit / Aufbauseminar) oder **FES** (Punkteabbau)?", "buttons": [{"label": "ASF (Probezeit)", "send": "ASF"}, {"label": "FES (Punkteabbau)", "send": "FES"}]}}}, {"id": "anmeldung_start", "topic": "anmeldung", "triggers": ["anmeldung", "start", "wie gehts los", "führerschein anfangen", "anmelden", "einschreiben", "wie melde ich mich an", "melde", "mich"], "responses": {"default": {"text": "Ganz easy: Komm bei uns in der Fahrschule vorbei (meist auch ohne Termin). Wir klären Klasse, Ablauf und starten alles mit dir.\n\nSo läuft die Anmeldung meistens ab:\n- Kurz vorbeikommen oder anrufen\n- Wir besprechen: welche Klasse (B/A/C…), dein Zeitplan, deine Fragen\n- Du bekommst alle Infos zu Ablauf, Unterlagen und Kosten transparent erklärt\n\nWenn du willst: Sag mir deine Klasse und ob du schon Sehtest/Erste Hilfe/Passbild hast – dann sag ich dir, was du als Nächstes brauchst.", "buttons": []}}}, {"id": "anmeldung_unterlagen", "topic": "anmeldung", "triggers": ["unterlagen", "mitbringen", "was brauche ich", "personalausweis", "reisepass", "anmeldung unterlagen", "was brauche ich zur anmeldung", "brauche", "anmeldung"], "responses": {"default": {"text": "Meist reicht Personalausweis oder Reisepass. Wenn du Sehtest/Erste Hilfe/Passbild schon hast: gern mitbringen – ist aber nicht immer direkt nötig.\n\nZur Anmeldung in der Regel:\n- Personalausweis oder Reisepass\n\nJe nach Klasse/Behörde werden später oft gebraucht:\n- Sehtest\n- Erste-Hilfe-Nachweis\n- Passbild\n\nKeine Sorge: Wenn etwas fehlt, sagen wir dir genau, was du wann brauchst. Für Details hilft dir unser Team bei uns in der Fahrschule oder auf unserer Homepage gern weiter.", "buttons": []}}}, {"id": "preise_kosten", "topic": "preise", "triggers": ["kosten", "preis", "wie teuer", "gesamtpreis", "führerschein kosten", "was kostet klasse b", "kosten führerschein", "was kostet der führerschein", "kostet", "führerschein"], "responses": {"default": {"text": "Der Gesamtpreis hängt vor allem davon ab, wie viele Übungsstunden du brauchst. Wir erklären dir die wichtigsten Kostenpunkte transparent – ohne Überraschungen.\n\nDie Hauptfaktoren sind meistens:\n- Grundbetrag / Anmeldung\n- Übungsstunden (je nachdem, wie schnell du sicher wirst)\n- Sonderfahrten (Pflichtanteile je nach Klasse)\n- Prüfungsgebühren (extern)\n\nWenn du magst: Sag mir deine Klasse (B/A/C) und ob du schon Fahrerfahrung hast – dann kann ich dir eine realistische grobe Einschätzung geben. Für exakte Zahlen: bei uns in der Fahrschule oder auf unserer Homepage.", "buttons": []}}}, {"id": "preise_raten", "topic": "preise", "triggers": ["raten", "ratenzahlung", "monatlich zahlen", "in raten", "zahlung aufteilen", "abbezahlen", "kann ich in raten zahlen", "kann", "zahlen"], "responses": {"default": {"text": "Ja – Ratenzahlung ist bei uns möglich. Sprich uns einfach kurz an, dann finden wir eine passende Lösung.\n\nRatenzahlung ist grundsätzlich möglich.\n\nSo läuft’s meistens:\n- Du meldest dich ganz normal an.\n- Wir schauen gemeinsam, welche Rate realistisch ist.\n- Die Details klären wir kurz bei uns in der Fahrschule oder telefonisch.\n\nWenn du magst: Sag mir, um welche Klasse es geht (B/A/C), dann kann ich’s grob einordnen.", "buttons": []}}}, {"id": "ablauf_gesamt", "topic": "ablauf", "triggers": ["ablauf", "prozess", "schritte", "von anmeldung bis führerschein", "wie läufts", "weg zum führerschein", "wie läuft der führerschein ab", "läuft", "führerschein"], "responses": {"default": {"text": "Kurz: Anmeldung → Antrag → Theorie → Theorieprüfung → Fahrstunden → praktische Prüfung → Führerschein 🎉\n\nDer grobe Ablauf ist:\n1) Anmeldung bei uns\n2) Antrag bei der Behörde (wir helfen dir dabei)\n3) Theorieunterricht + Lernen\n4) Theorieprüfung\n5) Fahrstunden (inkl. Sonderfahrten)\n6) Praktische Prüfung\n7) Führerschein 🎉\n\nWenn du willst: Sag mir kurz deine Klasse und ob du schon Theorie gemacht hast – dann kann ich dir eine realistische Reihenfolge & Timeline geben.", "buttons": []}}}, {"id": "ablauf_dauer", "topic": "ablauf", "triggers": ["dauer", "wie lange", "zeit", "wie schnell", "wann fertig", "führerschein dauer", "wie lange dauert der führerschein", "lange", "dauert", "führerschein"], "responses": {"default": {"text": "Das ist sehr unterschiedlich: Antrag/Termine + wie regelmäßig du Theorie lernst und fährst. Wer konstant dranbleibt, kommt meist deutlich schneller durch.\n\nEin paar Faktoren, die die Dauer stark beeinflussen:\n- Wie schnell der Antrag durch ist\n- Wie oft du Theorie machst und lernst\n- Wie regelmäßig du Fahrstunden nimmst (Konstanz = schneller)\n- Verfügbarkeit von Prüfungen\n\nTipp: 1–2 Fahrstunden pro Woche plus Theorie am Ball bleiben hilft enorm. Für eine Einschätzung passend zu deinem Alltag: bei uns in der Fahrschule oder auf unserer Homepage.", "buttons": []}}}, {"id": "theorie_unterricht", "topic": "theorie", "triggers": ["theorie", "unterricht", "theoriestunden", "theorie kurs", "theorie ablauf", "wie läuft der theorieunterricht ab", "läuft", "theorieunterricht"], "responses": {"default": {"text": "Du kommst zu den Theorie-Einheiten, wir erklären die Themen verständlich & prüfungsnah. Parallel lernst du am besten mit der App – so sitzt es schnell.\n\nIm Theorieunterricht geht’s um Regeln, Gefahrenlehre und typische Verkehrssituationen.\n\nSo holst du am meisten raus:\n- Regelmäßig hingehen (nicht alles auf einmal)\n- App/Fragen parallel machen\n- Fehler verstehen statt nur auswendig\n\nWenn du willst: Sag mir, wo du hängst (Vorfahrt, Schilder, Vorfahrtsregel, etc.), dann erklär ich’s kurz.", "buttons": []}}}, {"id": "theorie_pruefung", "topic": "theorieprufung", "triggers": ["theorieprüfung", "prüfung theorie", "fragen theorie", "theorie test", "prüfung am pc", "wie läuft die theorieprüfung ab", "läuft"], "responses": {"default": {"text": "Du machst die Theorieprüfung am PC mit Multiple-Choice-Fragen. Wenn du in der App stabil bestehst, bist du meistens sehr gut vorbereitet.\n\nWichtige Punkte:\n- Die Prüfung läuft am PC (Fragen/Antworten anklicken)\n- Gute Vorbereitung: App-Training + Verständnis\n- Wenn du unsicher bist, lieber nochmal nachlernen statt „Glücksspiel“\n\nWenn du willst: Sag mir, ob du schon mit App lernst – dann geb ich dir einen einfachen Plan, wann du prüfungsreif bist.", "buttons": []}}}, {"id": "fahrstunden_anzahl", "topic": "fahrstunden", "triggers": ["fahrstunden", "stunden", "praxis", "wie viele stunden", "wie viele fahrstunden", "übungsstunden", "wie viele fahrstunden brauche ich", "viele", "brauche"], "responses": {"default": {"text": "Das ist bei jedem unterschiedlich. Entscheidend sind Talent, Vorerfahrung und wie regelmäßig du fährst. Unser Ziel: sicher werden – ohne unnötige Stunden.\n\nWas die Anzahl beeinflusst:\n- Vorerfahrung (z. B. Verkehrsgefühl)\n- Wie regelmäßig du fährst (Konstanz bringt am meisten)\n- Nervosität/Stress und wie schnell du Routinen aufbaust\n\nTipp: Lieber regelmäßig fahren als selten „lange Sessions“. Für eine grobe Einschätzung passend zu dir: bei uns in der Fahrschule oder auf unserer Homepage.", "buttons": []}}}, {"id": "praxis_pruefung", "topic": "praktische_prufung", "triggers": ["praktische prüfung", "fahrprüfung", "prüfung fahren", "praxisprüfung", "tüv prüfung", "wie läuft die praktische prüfung ab", "läuft", "praktische", "prüfung"], "responses": {"default": {"text": "Du fährst mit Prüfer*in eine Strecke (Stadt/Land/Autobahn je nach Klasse) und zeigst, dass du sicher, vorausschauend und regelkonform fährst.\n\nTypisch in der Prüfung:\n- Fahrzeug-Check / ggf. Fragen zur Technik\n- Fahren im Verkehr (Spiegelblick, Abstand, Tempo, Beobachtung)\n- Grundfahraufgaben (z. B. Parken/Wenden – je nach Klasse)\n\nUnser Tipp: Ruhig bleiben, klar schauen, frühzeitig entscheiden. Wenn du willst: Ich nenne dir die häufigsten „unnötigen“ Fehler, die man easy vermeiden kann.", "buttons": []}}}, {"id": "probezeit_asf", "topic": "probezeit_asf_fes", "triggers": ["asf", "aufbauseminar", "probezeit", "asf kurs", "aufbauseminar probezeit", "was ist asf"], "responses": {"default": {"text": "ASF ist ein Aufbauseminar für Fahranfänger in der Probezeit. Es wird angeordnet, wenn man in der Probezeit auffällig wird (z. B. schwerer Verstoß).\n\nASF kurz erklärt:\n- Aufbauseminar (mehrere Sitzungen)\n- Dazu gehört auch eine Fahrprobe\n- Teilnahme an allen Sitzungen ist verpflichtend\n\nWichtig: Bei verspätetem Erscheinen oder dem Fehlen einer Sitzung kann die Teilnahme am kompletten Kurs beendet werden.\n\nFür deinen konkreten Fall (welcher Verstoß / welche Frist): bei uns in der Fahrschule oder auf unserer Homepage.", "buttons": []}}}, {"id": "probezeit_fes", "topic": "probezeit_asf_fes", "triggers": ["fes", "punkte", "punkteabbau", "verkehrspsychologie", "fes kurs", "was ist fes"], "responses": {"default": {"text": "FES ist eine freiwillige verkehrspsychologische Maßnahme. Sie kann helfen, wenn man in der Probezeit erneut auffällig wurde – und ggf. beim Umgang mit Punkten.\n\nWichtig (Punkteabbau):\n- Punkteabbau per FES ist nur bis maximal 5 Punkte möglich.\n- Ab 6–7 Punkten ist kein Abbau mehr möglich.\n\nFES ist keine „Strafe“, sondern Unterstützung, damit es in Zukunft besser läuft.\n\nWenn du willst: Sag mir grob deinen Punktestand bzw. die Situation – sonst hilft unser Team bei uns in der Fahrschule oder auf unserer Homepage.", "buttons": []}}}, {"id": "b196_info", "topic": "b196", "triggers": ["b196", "125er", "125", "125cc", "125 cm³", "b196 führerschein", "was ist b196"], "responses": {"default": {"text": "B196 ist eine Erweiterung des Autoführerscheins Klasse B: Du darfst damit 125er Motorräder fahren – ohne klassische Motorradprüfung.\n\nWas du mit B196 fahren darfst:\n- Motorräder bis 125 cm³\n- Max. 11 kW (15 PS)\n- Leistungsgewicht max. 0,1 kW/kg\n- Dreirädrige Kraftfahrzeuge bis 15 kW\n\nVoraussetzungen:\n- Mind. 5 Jahre Klasse B\n- Mindestalter: 25 Jahre\n- Fahrerschulung in der Fahrschule\n\nAblauf der Schulung (9×90 Minuten):\n- 4× Theorie\n- 5× Praxis\n\nDauer: Wir bieten z. B. 2 Unterrichtseinheiten pro Freitag – damit ist es oft in ca. 2 Wochen erledigt.\n\nPrüfung? Nein – keine Theorie- und keine Praxisprüfung.\n\nGültigkeit: B196 gilt nur in Deutschland.\n\nWichtig: B196 ist keine eigene Motorradklasse, daher kein direkter Aufstieg auf A2/A möglich.", "buttons": []}}}, {"id": "motorrad_klassen", "topic": "motorrad_a", "triggers": ["motorrad", "a1", "a2", "a", "motorrad führerschein", "klasse a", "welche motorradklassen gibt es", "welche", "motorradklassen", "gibt"], "responses": {"default": {"text": "Es gibt grob A1 (leichter), A2 (mittel) und A (offen). Welche Klasse zu dir passt, hängt von Alter und Zielen ab.\n\nKurzüberblick:\n- A1: Einstieg in leichtere Motorräder\n- A2: „Mittlere“ Klasse (oft der nächste Step)\n- A: offen / ohne Begrenzung\n\nDazu gibt’s je nach Vorbesitz auch Aufstiege (z. B. von A1→A2 oder A2→A).\n\nWelche Klasse für dich möglich ist und wie schnell es geht, hängt u. a. von deinem Alter und Vorbesitz ab. Für Details: bei uns in der Fahrschule oder auf unserer Homepage.", "buttons": []}}}, {"id": "lkw_klassen", "topic": "lkw_c_ce", "triggers": ["lkw", "c", "ce", "c1", "c1e", "lkw führerschein", "klasse c", "welche lkwklassen gibt es", "welche", "lkwklassen", "gibt"], "responses": {"default": {"text": "Für LKW gibt’s grob C1/C1E (kleiner) und C/CE (großer LKW, ggf. mit Anhänger).\n\nKurzüberblick:\n- C1: „kleiner“ LKW\n- C1E: C1 mit Anhänger\n- C: „großer“ LKW\n- CE: C mit Anhänger (Zugkombination)\n\nWelche Klasse du brauchst, hängt davon ab, was du fahren möchtest (Gewicht/Anhänger). Für eine klare Einordnung: bei uns in der Fahrschule oder auf unserer Homepage.", "buttons": []}}}, {"id": "kontakt_filialen", "topic": "kontakt", "triggers": ["kontakt", "telefon", "adresse", "öffnungszeiten", "filiale", "standort", "mail", "wie erreiche ich euch", "erreiche", "euch"], "responses": {"default": {"text": "Am besten kurz anrufen oder bei uns in der Fahrschule vorbeikommen – dann klären wir alles schnell. Viele Infos findest du auch auf unserer Homepage.\n\nKontakt & Infos:\n- Für Termin/Anmeldung: am schnellsten telefonisch oder direkt bei uns in der Fahrschule\n- Häufige Fragen (Ablauf/Preise/ASF/FES): auch auf unserer Homepage\n\nWenn du magst: Sag mir, worum es geht (Klasse, Termin, Problem) – dann sag ich dir, was der schnellste Weg ist.", "buttons": []}}}]};
+
+// Live-Overrides aus dem Dashboard (localStorage)
+    const OV_KEY_CFG  = "KIRA_OVERRIDE_config";
+    const OV_KEY_DATA = "KIRA_OVERRIDE_data";
+    const OV_KEY_INT  = "KIRA_OVERRIDE_intents";
+
+    // Modus: "legacy" (chatbot-wissen.json) oder "dashboard" (kira.*.json)
+    let MODE = "legacy";
+    let CFG = null, DATA = null, INT = null;
+
+    // DOM
+    document.getElementById("rkLogo").src = LOGO_IMG_URL;
+    document.getElementById("rkKiraImg").src = KIRA_IMG_URL;
+    document.getElementById("rkKiraMini").src = KIRA_IMG_URL;
+
+    const helloTimeEl = document.getElementById("rkHelloTime");
+    helloTimeEl.textContent = new Date().toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"});
+
+    const greetingEl = document.getElementById("rkGreetingLine");
+    const chat   = document.getElementById("rkChat");
+    const input  = document.getElementById("rkInput");
+    const send   = document.getElementById("rkSend");
+    const topics = document.getElementById("rkTopics");
+
+    // Micro style (menschlich)
+    const microAcks = [
+      "Alles klar ✅",
+      "Verstanden 👍",
+      "Gute Frage 🙂",
+      "Okay — hab ich 👌",
+      "Yes, kriegen wir hin.",
+      "Kein Stress 🙂"
+    ];
+    const microBridges = [
+      "Kurz & easy:",
+      "Das Wichtigste zuerst:",
+      "Kurz erklärt:",
+      "Hier die Kurzversion:",
+      "Kurz gesagt:"
+    ];
+    function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+    function esc(s){
+      return (s||"").toString().replace(/[&<>"']/g, m => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+      }[m]));
+    }
+    function timeNow(){ return new Date().toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"}); }
+
+    function addMsg(html, who="user"){
+      const wrap = document.createElement("div");
+      wrap.className = "rk-msg " + (who==="kira" ? "rk-msg-kira" : "rk-msg-user");
+      wrap.innerHTML = `
+        <div class="rk-bubble-wrap">
+          ${who==="kira" ? `<div class="rk-avatar-mini"><img src="${KIRA_IMG_URL}" alt=""></div>` : ``}
+          <div class="rk-bubble">${html}<div class="rk-time">${timeNow()}</div></div>
+        </div>`;
+      chat.appendChild(wrap);
+      chat.scrollTop = chat.scrollHeight;
+    }
+    function addTyping(){
+      const wrap = document.createElement("div");
+      wrap.className = "rk-msg rk-msg-kira";
+      wrap.id = "rkTyping";
+      wrap.innerHTML = `
+        <div class="rk-bubble-wrap">
+          <div class="rk-avatar-mini"><img src="${KIRA_IMG_URL}" alt=""></div>
+          <div class="rk-bubble"><span class="rk-typing"><span></span><span></span><span></span></span></div>
+        </div>`;
+      chat.appendChild(wrap);
+      chat.scrollTop = chat.scrollHeight;
+    }
+    function removeTyping(){ const t = document.getElementById("rkTyping"); if(t) t.remove(); }
+    function bindSubButtons(){
+      chat.querySelectorAll(".rk-subtopic").forEach(b=>{
+        b.onclick = ()=> handleSend(b.getAttribute("data-q"));
+      });
+    }
+
+    // Uhrzeit Begrüßung
+    function setTimeGreeting(){
+      const h = new Date().getHours();
+      let hello = "Hey 👋";
+      if(h >= 5 && h < 11) hello = "Guten Morgen 👋";
+      else if(h >= 11 && h < 15) hello = "Guten Mittag 👋";
+      else if(h >= 15 && h < 19) hello = "Guten Nachmittag 👋";
+      else hello = "Guten Abend 👋";
+      greetingEl.innerHTML = `<b>${hello}</b> Ich bin Kira.`;
+    }
+    setTimeGreeting();
+
+    // Toast
+    let toastTimer = null;
+    function showToast({emoji="💬", title="Thema gesetzt", sub="—"}){
+      const toast = document.getElementById("rkToast");
+      const tEmoji = document.getElementById("rkToastEmoji");
+      const tTitle = document.getElementById("rkToastTitle");
+      const tSub   = document.getElementById("rkToastSub");
+      if(!toast || !tEmoji || !tTitle || !tSub) return;
+
+      tEmoji.textContent = emoji;
+      tTitle.textContent = title;
+      tSub.textContent = sub;
+
+      toast.classList.add("is-show");
+      toast.setAttribute("aria-hidden","false");
+
+      if(toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(()=>{
+        toast.classList.remove("is-show");
+        toast.setAttribute("aria-hidden","true");
+      }, 1200);
+    }
+
+    // KB schema: { kb:[{id,q,cat,aliases[],short,long}], cats:[...] }
+    let KB = [];
+    let cats = [];
+    let catMap = new Map();
+    let lastHit = null;
+    let lastCat = null;
+    let lastQuery = null;
+
+    function normalizeEntry(e){
+      return {
+        id: e.id || "",
+        q: (e.q || "").trim(),
+        cat: (e.cat || "Allgemein").trim(),
+        aliases: Array.isArray(e.aliases) ? e.aliases.map(x=>String(x).trim()).filter(Boolean) : [],
+        short: (e.short || "").trim(),
+        long: (e.long || "").trim(),
+        _raw: e
+      };
+    }
+    function buildCatMap(){
+      catMap = new Map();
+      KB.forEach(x=>{
+        if(!catMap.has(x.cat)) catMap.set(x.cat, []);
+        catMap.get(x.cat).push(x);
+      });
+    }
+
+    async function loadKB(){
+      const res = await fetch(KB_URL, {cache:"no-store"});
+      if(!res.ok) throw new Error("KB fetch failed");
+      const data = await res.json();
+      KB = (Array.isArray(data.kb) ? data.kb : []).map(normalizeEntry);
+      cats = Array.isArray(data.cats) ? data.cats.map(c=>String(c).trim()).filter(Boolean) : [];
+      buildCatMap();
+      if(!cats.length) cats = [...catMap.keys()];
+      return KB.length > 0;
+    }
+
+    function safeJsonParse(str){
+      try{ return JSON.parse(str); }catch(_){ return null; }
+    }
+
+    function getParam(name){
+      const u = new URL(location.href);
+      return u.searchParams.get(name);
+    }
+
+    function applyThemeFromCFG(){
+      const vars = CFG?.theme?.css_vars;
+      if(!vars || typeof vars !== "object") return;
+      for (const [k,v] of Object.entries(vars)){
+        if(typeof k === "string" && typeof v === "string" && k.startsWith("--")){
+          document.documentElement.style.setProperty(k, v);
         }
       }
     }
-  ]
+
+    async function fetchJsonMaybe(url){
+      const res = await fetch(url, {cache:"no-store"});
+      if(!res.ok) throw new Error("fetch failed: " + url);
+      return await res.json();
+    }
+
+    // Lädt entweder Dashboard-Brain (kira.*.json + Overrides) oder fällt auf legacy KB zurück.
+    async function loadBrain(){
+      // 1) Versuche Live-Overrides (Dashboard -> "Live anwenden")
+      const oCfg  = safeJsonParse(localStorage.getItem(OV_KEY_CFG)  || "");
+      const oData = safeJsonParse(localStorage.getItem(OV_KEY_DATA) || "");
+      const oInt  = safeJsonParse(localStorage.getItem(OV_KEY_INT)  || "");
+
+      if(oCfg && oData && oInt && Array.isArray(oInt.intents)){
+        MODE = "dashboard";
+        CFG = oCfg; DATA = oData; INT = oInt;
+        applyThemeFromCFG();
+        buildFromIntents();
+        return true;
+      }
+
+      // 2) Versuche veröffentlichte JSONs (kira.config/data/intents.json)
+      try{
+        let loaded = false;
+        let lastErr = null;
+
+        for (const base of DASH_BASE_URLS){
+          try{
+            const b = base.endsWith("/") ? base : (base + "/");
+            const [cfg, data, intents] = await Promise.all([
+              fetchJsonMaybe(b + DASH_FILES.cfg),
+              fetchJsonMaybe(b + DASH_FILES.data),
+              fetchJsonMaybe(b + DASH_FILES.int),
+            ]);
+            if(cfg && data && intents && Array.isArray(intents.intents)){
+              MODE = "dashboard";
+              CFG = cfg; DATA = data; INT = intents;
+              applyThemeFromCFG();
+              buildFromIntents();
+              return true;
+            }
+            loaded = true; // fetched but schema wrong
+          }catch(e){
+            lastErr = e;
+          }
+        }
+
+        // Wenn wir hier sind, haben wir keine Dashboard-Dateien gefunden.
+        if(lastErr) throw lastErr;
+        if(cfg && data && intents && Array.isArray(intents.intents)){
+          MODE = "dashboard";
+          CFG = cfg; DATA = data; INT = intents;
+          applyThemeFromCFG();
+          buildFromIntents();
+          return true;
+        }
+      }catch(_){ /* ignore -> fallback */ }
+
+      // 3) Kein Legacy-Fallback im Produktivbetrieb:
+      // Wenn die Dashboard-Dateien fehlen, soll es klar Fehler zeigen.
+      console.warn("Dashboard-Brain-Dateien nicht gefunden – nutze eingebettete Defaults.");
+      MODE = "dashboard";
+      CFG = EMBED_CFG; DATA = EMBED_DATA; INT = EMBED_INT;
+      try { applyThemeFromCFG(); } catch(_){}
+      buildFromIntents();
+      return true;
+
+    }
+
+    // Baut eine "KB" aus INT.intents, damit die Optik (Topics/Unterpunkte) gleich bleibt.
+    function buildFromIntents(){
+      const intents = Array.isArray(INT?.intents) ? INT.intents : [];
+      const entries = intents.map(it => {
+        const def = it?.responses?.default || (it?.responses ? it.responses[Object.keys(it.responses)[0]] : null) || {};
+        const txt = String(def?.text || "").trim();
+        return normalizeEntry({
+          id: it.id || "",
+          q: it.id || "",
+          cat: (it.topic || "Allgemein"),
+          aliases: Array.isArray(it.triggers) ? it.triggers : [],
+          short: txt,
+          long: txt,
+          intent: it
+        });
+      }).filter(e => e.q);
+
+      KB = entries;
+      cats = [...new Set(entries.map(e=>e.cat).filter(Boolean))];
+
+      buildCatMap();
+      if(!cats.length) cats = [...catMap.keys()];
+    }
+
+    // Dashboard-Matching (gleiches Scoring wie im Dashboard)
+    function scoreIntent(intent, text){
+      const t = (text||"").toLowerCase();
+      let score = 0;
+      for (const trig of (intent?.triggers || [])){
+        const s = String(trig||"").toLowerCase();
+        if(!s) continue;
+        if(t.includes(s)) score += 1;
+      }
+      return score;
+    }
+
+    function pickIntent(text){
+      let best = null, bestScore = 0;
+      for (const it of (INT?.intents || [])){
+        const sc = scoreIntent(it, text);
+        if(sc > bestScore){ bestScore = sc; best = it; }
+      }
+      return bestScore > 0 ? best : null;
+    }
+
+    function pickResponse(intent, text){
+      if(!intent) return null;
+      const t = (text||"").toLowerCase();
+      const responses = intent.responses || {};
+      // Wenn User zufällig einen Response-Key erwähnt (z.B. "zahlung"), nimm den.
+      const keys = Object.keys(responses).filter(k=>k && k!=="default");
+      for (const k of keys){
+        if(t.includes(k.toLowerCase())) return { key:k, ...responses[k] };
+      }
+      return { key:"default", ...(responses.default || responses[keys[0]] || {text:"",buttons:[]}) };
+    }
+
+    function renderDashButtons(buttons){
+      if(!Array.isArray(buttons) || !buttons.length) return "";
+      const parts = buttons.map(b=>{
+        const label = esc(String(b?.label || b?.text || b?.title || "Weiter"));
+        const sendQ = b?.send || b?.q || b?.query;
+        const linkId = b?.link_id || b?.linkId;
+        const url = b?.url || b?.href || (linkId && DATA?.links?.[linkId]?.url) || "";
+        if(sendQ){
+          return `<button class="rk-subtopic" data-q="${esc(String(sendQ))}">${label}</button>`;
+        }
+        if(url){
+          return `<a class="rk-subtopic" href="${esc(String(url))}" target="_blank" rel="noopener">${label}</a>`;
+        }
+        return "";
+      }).join("");
+      return parts ? `<div class="rk-subwrap">${parts}</div>` : "";
+    }
+
+    function bindDashButtons(){
+      // Reuse bestehende Sub-Button-Logik
+      bindSubButtons();
+    }
+
+    // Reagiere auf Live-Änderungen aus dem Dashboard (ohne Reload)
+    window.addEventListener("storage", (e) => {
+      if(!e) return;
+      if([OV_KEY_CFG, OV_KEY_DATA, OV_KEY_INT].includes(e.key)){
+        // Versuch neu zu laden; UI bleibt gleich
+        loadBrain().then(()=>{
+          renderTopics();
+          showToast({ emoji:"⚡", title:"Live-Update", sub:"Dashboard-Änderungen übernommen" });
+        }).catch(()=>{});
+      }
+    });
+
+    // Priorität + Emoji + Sortierung
+    const catPriority = [
+      "Anmeldung","Preise","Ablauf","Theorie","Theorieprüfung","Fahrstunden",
+      "Praktische Prüfung","Probezeit / ASF / FES","ASF","FES","B196",
+      "Motorrad","LKW","Kontakt","Filialen"
+    ];
+    const catEmojiRules = [
+      { test: /preis|kosten|gebühr|raten/i, emoji: "💶" },
+      { test: /anmeld|start|unterlagen/i, emoji: "📝" },
+      { test: /ablauf|weg|schritt|prozess/i, emoji: "🧭" },
+      { test: /theorie(?!prüfung)/i, emoji: "📘" },
+      { test: /theorieprüfung/i, emoji: "🧠" },
+      { test: /fahrstund|praxis(?!prüfung)/i, emoji: "🚗" },
+      { test: /praktisch|praxisprüfung|fahrprüfung/i, emoji: "🏁" },
+      { test: /probezeit|asf|fes/i, emoji: "⚠️" },
+      { test: /punkte|flensburg/i, emoji: "📌" },
+      { test: /kontakt|filial|öffnungs|adresse/i, emoji: "📍" },
+      { test: /b196/i, emoji: "🛵" },
+      { test: /c|lkw|ce|c1/i, emoji: "🚛" },
+      { test: /a1|a2|a\b|motorrad/i, emoji: "🏍️" }
+    ];
+    function getCatEmoji(cat){
+      for(const r of catEmojiRules){
+        if(r.test.test(cat)) return r.emoji;
+      }
+      return "💬";
+    }
+    function prioIndex(cat){
+      const c = (cat || "").toLowerCase();
+      for(let i=0;i<catPriority.length;i++){
+        if(c.includes(catPriority[i].toLowerCase())) return i;
+      }
+      return 999;
+    }
+    function sortCats(list){
+      return [...list].sort((a,b)=>{
+        const pa = prioIndex(a);
+        const pb = prioIndex(b);
+        if(pa !== pb) return pa - pb;
+        return a.localeCompare(b, "de", { sensitivity: "base" });
+      });
+    }
+    function formatCatLabel(cat){
+      return `${getCatEmoji(cat)} ${cat}`;
+    }
+
+    function scrollTopicIntoView(cat){
+      const btns = Array.from(document.querySelectorAll("#rkTopics .rk-topic"));
+      const target = btns.find(b => (b.textContent || "").includes(cat));
+      if(target){
+        target.scrollIntoView({behavior:"smooth", block:"nearest"});
+      }
+    }
+
+    function setActiveTopic(cat){
+      const btns = Array.from(document.querySelectorAll("#rkTopics .rk-topic"));
+      btns.forEach(btn => btn.classList.remove("is-active"));
+
+      const target = btns.find(b => (b.textContent || "").includes(cat));
+      if(target){
+        // ping neu triggern
+        target.classList.remove("is-active");
+        void target.offsetWidth;
+        target.classList.add("is-active");
+        scrollTopicIntoView(cat);
+      }
+    }
+
+    // Clean Unterpunkte (max 4) – optional presets; sonst KB-Fragen
+    const catPresets = {
+      "Preise": [
+        "Was kostet der Führerschein?",
+        "Kann ich in Raten zahlen?",
+        "Was kostet eine Fahrstunde?",
+        "Welche Zusatzkosten können anfallen?"
+      ],
+      "Anmeldung": [
+        "Wie melde ich mich an?",
+        "Was brauche ich zur Anmeldung?",
+        "Geht das ohne Termin?",
+        "Wie schnell kann ich starten?"
+      ],
+      "Probezeit / ASF / FES": [
+        "Was ist ASF?",
+        "Was ist FES?",
+        "Was passiert bei Fehlen oder Zuspätkommen?",
+        "Bis wann geht Punkteabbau überhaupt?"
+      ],
+      "B196": [
+        "Was ist B196?",
+        "Welche Voraussetzungen gibt es?",
+        "Wie läuft die Schulung ab?",
+        "Wie lange dauert das?"
+      ]
+    };
+
+    function renderTopics(){
+      topics.innerHTML = "";
+
+      // Dashboard: optional Start-Kacheln aus CFG.ui.start_tiles
+      if(MODE === "dashboard" && Array.isArray(CFG?.ui?.start_tiles) && CFG.ui.start_tiles.length){
+        CFG.ui.start_tiles.forEach(t => {
+          const btn = document.createElement("button");
+          btn.className = "rk-topic";
+          const label = `${(t.emoji||"")} ${(t.label||t.id||"")}`.trim();
+          btn.textContent = label || "Kachel";
+          btn.onclick = ()=> handleSend(t.id || t.label || "");
+          topics.appendChild(btn);
+        });
+        return;
+      }
+
+      // Legacy + Dashboard (ohne Tiles): Topics aus cats
+      const sorted = sortCats(cats);
+      sorted.forEach(cat=>{
+        const btn = document.createElement("button");
+        btn.className = "rk-topic";
+        btn.textContent = formatCatLabel(cat);
+        btn.onclick = ()=> showSubTopics(cat);
+        topics.appendChild(btn);
+      });
+    }
+
+    function renderMoreButtons(){
+      return `<div class="rk-subwrap">
+        <button class="rk-subtopic" data-q="mehr">mehr</button>
+        <button class="rk-subtopic" data-q="noch mehr">noch mehr</button>
+      </div>`;
+    }
+
+    function buildFollowUpQuestion(hit, userText){
+      const cat = (hit?.cat || "").toLowerCase();
+      const t = (userText||"").toLowerCase();
+
+      if(cat.includes("preise") || t.includes("kosten") || t.includes("preis")){
+        return `Magst du mir kurz sagen, um welche Klasse es geht (B / A / C) und ob du schon Theorie angefangen hast? Dann kann ich’s genauer einordnen 🙂`;
+      }
+      if(cat.includes("anmeldung")){
+        return `Willst du eher schnell starten oder ganz entspannt? Dann sag ich dir, was am besten passt 🙂`;
+      }
+      if(cat.includes("probezeit") || t.includes("asf") || t.includes("fes") || t.includes("punkte")){
+        return `Geht’s bei dir um <b>Probezeit (ASF)</b> oder um <b>Punkte (FES)</b>?`;
+      }
+      if(cat.includes("prüfung") || t.includes("prüfung")){
+        return `Meinst du die <b>Theorieprüfung</b> oder die <b>praktische Prüfung</b>?`;
+      }
+      if(cat.includes("fahrstunden") || t.includes("fahrstunde") || t.includes("praxis")){
+        return `Wie oft willst du ungefähr fahren (1×/Woche, 2×/Woche oder öfter)? Dann kann ich dir ein realistisches Tempo sagen 🙂`;
+      }
+      if(!hit){
+        return `Geht’s eher um <b>Kosten</b>, <b>Ablauf</b>, <b>Prüfung</b> oder <b>Probezeit</b>?`;
+      }
+      return "";
+    }
+
+    function shortReply(hit, userText){
+      const ack = pick(microAcks);
+      const bridge = pick(microBridges);
+
+      if(hit?.cat) lastCat = hit.cat;
+
+      const main = hit?.short
+        ? esc(hit.short)
+        : `Zu <b>${esc(userText)}</b>: sag mir kurz, was du genau wissen willst – dann bring ich dich direkt zur passenden Info.`;
+
+      const followUp = buildFollowUpQuestion(hit, userText);
+      return `${ack}<br><b>${bridge}</b> ${main}${followUp ? `<br><br>${followUp}` : ""}`;
+    }
+
+    function toBullets(text){
+      const raw = (text || "").trim();
+      if(!raw) return "";
+      const lines = raw.split(/\n+/).map(s=>s.trim()).filter(Boolean);
+      const items = (lines.length >= 2)
+        ? lines
+        : raw.split(/(?<=[.!?])\s+/).map(s=>s.trim()).filter(Boolean);
+      const top = items.slice(0, 5);
+      return `<ul style="margin:8px 0 0 18px; padding:0;">
+        ${top.map(i=>`<li style="margin:6px 0;">${esc(i)}</li>`).join("")}
+      </ul>`;
+    }
+
+    function longReply(hit, level){
+      if(!hit){
+        return `Kannst du mir kurz sagen, worum genau es geht? Dann erklär ich’s dir passend 🙂`;
+      }
+      const short = (hit.short || "").trim();
+      const long  = (hit.long || "").trim();
+
+      if(level === "mehr"){
+        const base = long || short;
+        if(!base) return `Dazu hab ich gerade noch keine Detail-Info in meiner Datenbank.`;
+        return `Alles klar – etwas ausführlicher:${toBullets(base)}
+          <div style="margin-top:10px; color:rgba(15,23,42,.70)">
+            Wenn du willst, sag mir kurz deine Situation – dann mach ich’s 1:1 passend.
+          </div>`;
+      }
+
+      const deepBase = long || short;
+      if(!deepBase) return `Dazu hab ich gerade noch keine Detail-Info in meiner Datenbank.`;
+
+      return `Okay, dann richtig im Detail:${toBullets(deepBase)}
+        <div style="margin-top:10px; color:rgba(15,23,42,.70)">
+          Mini-Check: Um welche <b>Klasse</b> geht’s (B/A/C)? Und wo stehst du gerade (Anmeldung / Theorie / Praxis / Prüfung)?
+        </div>`;
+    }
+
+    function showSubTopics(cat){
+      lastCat = cat;
+      setActiveTopic(cat);
+      showToast({ emoji: getCatEmoji(cat), title: "Thema gesetzt", sub: cat });
+
+      const preset = catPresets[cat] || [];
+      const entries = catMap.get(cat) || [];
+
+      const sub = preset.length
+        ? preset.slice(0, 4)
+        : entries.map(e=>e.q).filter(Boolean).slice(0, 4);
+
+      if(!sub.length){
+        addMsg(`${pick(microAcks)} <b>${esc(formatCatLabel(cat))}</b> – was möchtest du näher wissen?`, "kira");
+        return;
+      }
+
+      const buttons = sub.map(q=>`<button class="rk-subtopic" data-q="${esc(q)}">${esc(q)}</button>`).join("");
+      addMsg(`${pick(microAcks)} <b>${esc(formatCatLabel(cat))}</b>.<br>Was möchtest du näher wissen?<div class="rk-subwrap">${buttons}</div>`, "kira");
+      bindSubButtons();
+    }
+
+    function scoreEntry(e, query){
+      const q = query.toLowerCase();
+      const hay = (e.q + " " + e.short + " " + e.long + " " + e.cat + " " + e.aliases.join(" ")).toLowerCase();
+      let s = 0;
+
+      if(e.q.toLowerCase() === q) s += 90;
+
+      const parts = q.split(/\s+/).filter(p=>p.length>2).slice(0,12);
+      for(const p of parts){
+        if(hay.includes(p)) s += 8;
+        if(e.q.toLowerCase().includes(p)) s += 6;
+        if(e.aliases.some(a=>a.toLowerCase() === p)) s += 20;
+        if(e.aliases.some(a=>a.toLowerCase().includes(p))) s += 10;
+      }
+      if(e.aliases.some(a=>q.includes(a.toLowerCase()))) s += 18;
+      return s;
+    }
+
+    function findBest(query){
+      let best = null, bestS = 0;
+      for(const e of KB){
+        const s = scoreEntry(e, query);
+        if(s > bestS){ bestS = s; best = e; }
+      }
+      return bestS >= 12 ? best : null;
+    }
+
+    function guessTopIntents(text){
+      const t = (text||"").toLowerCase();
+      const res = [];
+
+      if(t.includes("kosten") || t.includes("preis") || t.includes("raten")) res.push("Was kostet der Führerschein?");
+      if(t.includes("anmeld") || t.includes("start")) res.push("Wie melde ich mich an?");
+      if(t.includes("theorie")) res.push("Wie läuft die Theorieprüfung ab?");
+      if(t.includes("prakt") || t.includes("fahrprüfung")) res.push("Wie läuft die praktische Prüfung ab?");
+      if(t.includes("asf") || t.includes("probezeit")) res.push("Was ist ASF?");
+      if(t.includes("fes") || t.includes("punkte")) res.push("Was ist FES?");
+      if(t.includes("fahrstunde") || t.includes("praxis")) res.push("Wie viele Fahrstunden brauche ich?");
+      if(t.includes("b196")) res.push("Was ist B196?");
+
+      if(!res.length){
+        res.push("Was kostet der Führerschein?");
+        res.push("Wie läuft der Führerschein ab?");
+        res.push("Was ist ASF?");
+        res.push("Wie läuft die praktische Prüfung ab?");
+      }
+      return [...new Set(res)].slice(0, 4);
+    }
+
+    function offerClarifyOptions(userText){
+      const opts = guessTopIntents(userText);
+      const buttons = opts.map(o => `<button class="rk-subtopic" data-q="${esc(o)}">${esc(o)}</button>`).join("");
+      addMsg(`Meinst du eher eins davon?<div class="rk-subwrap">${buttons}</div>`, "kira");
+      bindSubButtons();
+    }
+
+    function handleSend(raw){
+      const t = (raw||"").trim();
+      if(!t) return;
+
+      lastQuery = t;
+
+      addMsg(esc(t), "user");
+      input.value = "";
+      input.focus();
+
+      addTyping();
+      setTimeout(() => {
+        removeTyping();
+
+        const lower = t.toLowerCase();
+
+        // Dashboard-Engine (INT.intents) – gleiche Optik, neues "Brain"
+        if(MODE === "dashboard"){
+          const it = pickIntent(t);
+          lastHit = null;
+
+          if(it){
+            // Thema im UI setzen (wenn vorhanden)
+            if(it.topic){
+              lastCat = it.topic;
+              setActiveTopic(it.topic);
+            }
+
+            const res = pickResponse(it, t) || {text:"", buttons:[]};
+            const text = String(res.text || "").trim();
+
+            // speichere als lastHit, damit "mehr" nicht kaputt macht (zeigt einfach den gleichen Text)
+            lastHit = normalizeEntry({
+              id: it.id || "",
+              q: it.id || "",
+              cat: it.topic || "Allgemein",
+              aliases: Array.isArray(it.triggers) ? it.triggers : [],
+              short: text,
+              long: text,
+              intent: it
+            });
+
+            addMsg(`${esc(text).replaceAll("\n","<br>")}${renderDashButtons(res.buttons)}`, "kira");
+            bindDashButtons();
+          } else {
+  // Fuzzy-Fallback: Wenn trigger-String-Matching nix findet, versuch es über die
+  // KB-Scoring-Logik (die wir aus intents gebaut haben). Das macht Kira deutlich "klüger".
+  let best = null, bestS = 0;
+  for(const e of KB){
+    const s = scoreEntry(e, t);
+    if(s > bestS){ bestS = s; best = e; }
+  }
+  const hit = (bestS >= 8) ? best : null;
+
+  if(hit && hit.intent){
+    const it2 = hit.intent;
+
+    if(it2.topic){
+      lastCat = it2.topic;
+      setActiveTopic(it2.topic);
+    }
+
+    const res2 = pickResponse(it2, t) || {text: hit.short || "", buttons:[]};
+    const text2 = String(res2.text || hit.short || "").trim();
+
+    lastHit = normalizeEntry({
+      id: it2.id || hit.id || "",
+      q: it2.id || hit.q || "",
+      cat: it2.topic || hit.cat || "Allgemein",
+      aliases: Array.isArray(it2.triggers) ? it2.triggers : (hit.aliases || []),
+      short: text2,
+      long: text2,
+      intent: it2
+    });
+
+    addMsg(`${esc(text2).replaceAll("
+","<br>")}${renderDashButtons(res2.buttons)}`, "kira");
+    bindDashButtons();
+  } else {
+    const fb = CFG?.fallback || {};
+    const fbText = String(fb.text || "").trim() || `${pick(microAcks)} Ich hab dazu gerade nichts Passendes im Wissen gefunden.`;
+
+    // Vorschläge: nimm die besten KB-Treffer (auch wenn sie unter dem Schwellwert liegen)
+    const scored = KB.map(e => ({q: e.q, s: scoreEntry(e, t)}))
+      .filter(x => x.s > 0)
+      .sort((a,b)=>b.s-a.s)
+      .slice(0,4)
+      .map(x => x.q);
+
+    const sugg = [...new Set(scored)].slice(0,4);
+    const suggHtml = sugg.length
+      ? `<div class="rk-subwrap">${sugg.map(q=>`<button class="rk-subtopic" data-q="${esc(q)}">${esc(q)}</button>`).join("")}</div>`
+      : "";
+
+    let linksHtml = "";
+    const p = fb.primary_link_id;
+    const s = fb.secondary_link_id;
+    const btns = [];
+    if(p && DATA?.links?.[p]?.url) btns.push({label: DATA.links[p].label || p, url: DATA.links[p].url});
+    if(s && DATA?.links?.[s]?.url) btns.push({label: DATA.links[s].label || s, url: DATA.links[s].url});
+    linksHtml = renderDashButtons(btns);
+
+    addMsg(`${esc(fbText).replaceAll("
+","<br>")}${linksHtml}${suggHtml}`, "kira");
+    bindSubButtons();
+  }
 }
+          return;
+        }
+
+
+        if(lower === "mehr" || lower === "noch mehr"){
+          addMsg(longReply(lastHit, lower), "kira");
+          return;
+        }
+
+        // Wenn User exakt eine Kategorie schreibt
+        if(catMap.has(t) || cats.includes(t)){
+          showSubTopics(t);
+          return;
+        }
+
+        const hit = findBest(t);
+        lastHit = hit;
+
+        if(hit){
+          if(hit.cat){
+            lastCat = hit.cat;
+            setActiveTopic(hit.cat);
+            showToast({ emoji: getCatEmoji(hit.cat), title: "Passt zum Thema", sub: hit.cat });
+          }
+
+          const topicTag = hit?.cat
+            ? `<span style="color:rgba(15,23,42,.62)">Passt zum Thema <b>${esc(formatCatLabel(hit.cat))}</b>.</span><br><br>`
+            : "";
+
+          addMsg(topicTag + shortReply(hit, t) + `<br>${renderMoreButtons()}`, "kira");
+          bindSubButtons();
+
+          // Danach: „Was möchtest du näher wissen?“ (max 4)
+          const preset = catPresets[hit.cat] || [];
+          const entries = catMap.get(hit.cat) || [];
+          const rel = preset.length ? preset.slice(0, 4) : entries.map(e=>e.q).filter(Boolean).slice(0, 4);
+
+          if(rel.length){
+            const buttons = rel.map(q=>`<button class="rk-subtopic" data-q="${esc(q)}">${esc(q)}</button>`).join("");
+            addMsg(`Was möchtest du näher wissen?<div class="rk-subwrap">${buttons}</div>`, "kira");
+            bindSubButtons();
+          }
+        } else {
+          addMsg(`${pick(microAcks)} Ich bin mir gerade nicht ganz sicher, was du meinst 🙂`, "kira");
+          offerClarifyOptions(t);
+        }
+      }, 520);
+    }
+
+    send.addEventListener("click", ()=> handleSend(input.value));
+    input.addEventListener("keydown", (e)=>{ if(e.key==="Enter"){ e.preventDefault(); handleSend(input.value); } });
+
+    // Boot
+    (async function init(){
+      try{
+        await loadBrain();
+        renderTopics();
+        addMsg("Wobei soll ich dir helfen? 🙂 Du kannst links ein Thema wählen oder einfach deine Frage tippen.", "kira");
+        addMsg(`✅ Brain geladen (${MODE==="dashboard" ? "Dashboard" : "Legacy"}).`, "kira");
+      }catch(err){
+        console.warn(err);
+        addMsg(`⚠️ Ich konnte die Wissensdatenbank gerade nicht laden.
+
+Bitte prüf, ob diese Dateien erreichbar sind (im gleichen Ordner wie die Seite):
+- kira.config.json
+- kira.data.json
+- kira.intents.json
+
+Direkt-Check (sollte JSON anzeigen):
+https://terr0nic.github.io/ChatBot/kira.config.json
+https://terr0nic.github.io/ChatBot/kira.data.json
+https://terr0nic.github.io/ChatBot/kira.intents.json`, "kira");
+      }
+    })();
+  </script>
+</body>
+</html>
